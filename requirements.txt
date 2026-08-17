@@ -1,0 +1,10 @@
+langgraph
+langchain-anthropic
+langchain-voyageai
+pymongo
+fastapi
+uvicorn
+streamlit
+pydantic
+python-dotenv
+pytest

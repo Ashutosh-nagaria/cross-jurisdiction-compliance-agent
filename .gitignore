@@ -1,0 +1,13 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+
+# Real secrets, never commit this file
+.env
+
+# macOS folder metadata
+.DS_Store
