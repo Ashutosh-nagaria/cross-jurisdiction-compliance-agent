@@ -1,6 +1,7 @@
 langgraph
 langchain-anthropic
 langchain-voyageai
+voyageai
 pymongo
 fastapi
 uvicorn
