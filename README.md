@@ -40,8 +40,7 @@ the citation wrong. The baseline retrieval system's advantage shows up
 on the questions a fixed table cannot handle at all: correcting a
 misleading or adversarial claim, and drafting an actual document
 rather than just stating a fact. See [docs/RESULTS.md](docs/RESULTS.md)
-for the full numbers, and [concepts.md](concepts.md) for a deeper
-explanation of why each system behaves the way it does.
+for the full numbers.
 
 ## Running it
 
@@ -55,8 +54,8 @@ yourself before it is treated as final, the same way a real reviewer
 would. See [DEPLOY.md](DEPLOY.md) for how to build and run the whole
 thing in a container instead.
 
-## Status
+## Read more
 
-This project's full build is complete, chapter by chapter. See
-[docs/PLAN.md](docs/PLAN.md) for the chapter history and
-[docs/RESULTS.md](docs/RESULTS.md) for the full evaluation results.
+- [concepts.md](concepts.md), how the three systems actually work
+- [journey.md](journey.md), the full build story, mistakes included
+- [docs/RESULTS.md](docs/RESULTS.md), the raw comparison data
