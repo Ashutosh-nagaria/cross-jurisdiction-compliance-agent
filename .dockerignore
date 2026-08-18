@@ -1,0 +1,29 @@
+# Local Python environment, never needed inside the container, since
+# the Dockerfile installs its own fresh copy of every package
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Real secrets, must never be baked into an image, since anyone who
+# later got a copy of the image could read them straight out of it
+.env
+
+# Git's own history and metadata, not needed to run the app
+.git/
+.gitignore
+
+# macOS folder metadata
+.DS_Store
+
+# Development, evaluation, and documentation files, not needed for the
+# app itself to run, only to build and score it during development
+scripts/
+eval/
+docs/
+notebooks/
+
+# Streamlit's local agent skill symlinks, environment specific, not
+# part of the app
+.agents/
+.claude/
