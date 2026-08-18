@@ -1,5 +1,6 @@
 langgraph
 langchain-anthropic
+anthropic
 langchain-voyageai
 voyageai
 pymongo
