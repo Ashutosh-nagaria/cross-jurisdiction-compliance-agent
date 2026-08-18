@@ -11,3 +11,7 @@ venv/
 
 # macOS folder metadata
 .DS_Store
+
+# Streamlit agent skills, environment specific symlinks
+.agents/skills/developing-with-streamlit
+.claude/skills/developing-with-streamlit

@@ -578,3 +578,73 @@ def answer_question(question):
         "verified_claims": result["verified_claims"],
         "rejected_claims": result["rejected_claims"],
     }
+
+
+# --- Interactive approval, used by the Streamlit app (Chapter 11) ------
+#
+# answer_question above auto-approves immediately, since the eval script
+# runs unattended and there is no person available to click anything.
+# The web app is different: a real person is looking at the page, so
+# the app should actually pause and wait for them to click Approve or
+# Reject, the way a real deployment would. These two functions split
+# answer_question's single call into two steps so the app can put a
+# real button in between them.
+
+
+def start_question(question):
+    """
+    Runs System B up through the human approval pause, and returns
+    what a reviewer needs to see, without deciding anything. Call
+    resume_with_decision afterward with the same thread_id once a
+    person has actually made a decision.
+    """
+    graph = _get_graph()
+    thread_id = str(uuid.uuid4())
+    config = {"configurable": {"thread_id": thread_id}}
+
+    initial_state = {
+        "question": question,
+        "jurisdictions": [],
+        "retrieved_chunks": [],
+        "claims": [],
+        "verified_claims": [],
+        "rejected_claims": [],
+        "final_answer": "",
+    }
+
+    result = graph.invoke(initial_state, config=config)
+
+    if "__interrupt__" not in result:
+        # Should not normally happen, the graph always pauses at the
+        # approval node, but handle it rather than crash if it does.
+        return {
+            "thread_id": thread_id,
+            "question": question,
+            "verified_claims": result.get("verified_claims", []),
+            "rejected_claims": result.get("rejected_claims", []),
+        }
+
+    review_payload = result["__interrupt__"][0].value
+    return {
+        "thread_id": thread_id,
+        "question": question,
+        "verified_claims": review_payload["verified_claims"],
+        "rejected_claims": review_payload["rejected_claims"],
+    }
+
+
+def resume_with_decision(thread_id, approved):
+    """
+    Resumes a paused System B run with a real decision from a human
+    reviewer, and returns the final answer. approved should be True
+    for an actual Approve click, False for Reject.
+    """
+    graph = _get_graph()
+    config = {"configurable": {"thread_id": thread_id}}
+    result = graph.invoke(Command(resume={"approved": approved}), config=config)
+    return {
+        "answer": result["final_answer"],
+        "retrieved_chunks": result["retrieved_chunks"],
+        "verified_claims": result["verified_claims"],
+        "rejected_claims": result["rejected_claims"],
+    }
