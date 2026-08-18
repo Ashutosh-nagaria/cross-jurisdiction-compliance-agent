@@ -98,7 +98,18 @@ def chunk_file(path):
         block_text = match.group()
         start, end = match.start(), match.end()
 
-        header_match = HEADER_LINE_RE.match(block_text)
+        # Only test the block's first line against the header pattern,
+        # not the whole block. Statute file headers are followed
+        # immediately by "Source:" and "Retrieved:" lines with no blank
+        # line in between, so a header block is often more than one
+        # line long. Matching against the whole block would require the
+        # header to be the entire block with nothing after it, which
+        # silently failed for every statute file, since their headers
+        # always have those two lines glued on. Company docs happened
+        # to have a blank line after each header, so they were not
+        # affected and this went unnoticed.
+        first_line = block_text.split("\n", 1)[0]
+        header_match = HEADER_LINE_RE.match(first_line)
         if header_match:
             current_section = header_match.group(1).strip()
 

@@ -93,19 +93,19 @@ def call_system(question, system_name):
         result = answer_question(question["question"])
         return result["answer"], result.get("retrieved_chunks", [])
 
-    # Chapter 7: once System B (the verifying agent) exists, plug it in
-    # the same way:
-    # if system_name == "system_b":
-    #     from src.system_b import answer_question
-    #     result = answer_question(question["question"])
-    #     return result["answer"], result.get("retrieved_chunks", [])
+    if system_name == "system_b":
+        # Chapter 7: System B (the verifying LangGraph agent) is built, this is it.
+        from src.system_b import answer_question
 
-    # Chapter 9: once System C (the deterministic rule lookup) exists,
-    # plug it in the same way:
-    # if system_name == "system_c":
-    #     from src.system_c import answer_question
-    #     result = answer_question(question["question"])
-    #     return result["answer"], result.get("retrieved_chunks", [])
+        result = answer_question(question["question"])
+        return result["answer"], result.get("retrieved_chunks", [])
+
+    if system_name == "system_c":
+        # Chapter 9: System C (the deterministic rule lookup) is built, this is it.
+        from src.system_c import answer_question
+
+        result = answer_question(question["question"])
+        return result["answer"], result.get("retrieved_chunks", [])
 
     return "SYSTEM NOT YET BUILT", []
 
@@ -517,8 +517,8 @@ def build_report(results, system_name):
     system_labels = {
         "placeholder": "placeholder (no compliance system built yet)",
         "system_a": "System A (baseline retrieval and answer)",
-        "system_b": "System B (verifying agent, not yet built)",
-        "system_c": "System C (deterministic rule lookup, not yet built)",
+        "system_b": "System B (verifying LangGraph agent)",
+        "system_c": "System C (deterministic rule lookup)",
     }
 
     return {
@@ -567,6 +567,17 @@ def parse_args():
             "Where to save the results JSON. Defaults to "
             "eval/results/latest.json for the placeholder, or "
             "eval/results/<system>.json for a real system."
+        ),
+    )
+    parser.add_argument(
+        "--bucket",
+        type=int,
+        default=None,
+        choices=range(1, 7),
+        help=(
+            "Only score questions from this one bucket (1 through 6), "
+            "instead of all 90. Useful for a quick sanity check of a new "
+            "system before spending a full run on it."
         ),
     )
     parser.add_argument(
@@ -694,10 +705,18 @@ def main():
         results_file = Path(args.output)
     elif system_name == "placeholder":
         results_file = DEFAULT_RESULTS_FILE
+    elif args.bucket:
+        # A bucket-only sanity check run is not the real full-90 result
+        # for this system, save it separately so it cannot accidentally
+        # overwrite eval/results/<system>.json from a full run.
+        results_file = REPO_ROOT / "eval" / "results" / f"{system_name}_bucket{args.bucket}.json"
     else:
         results_file = REPO_ROOT / "eval" / "results" / f"{system_name}.json"
 
     questions = parse_questions(QUESTIONS_FILE)
+    if args.bucket:
+        questions = [q for q in questions if q["bucket"] == args.bucket]
+
     results_file.parent.mkdir(parents=True, exist_ok=True)
 
     # A real system can take 30+ minutes to run across all 90 questions,
