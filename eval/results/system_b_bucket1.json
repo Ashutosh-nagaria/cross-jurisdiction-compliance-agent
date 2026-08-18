@@ -1,0 +1,1916 @@
+{
+  "generated_at": "2026-08-18T06:39:27.585651+00:00",
+  "system_tested": "System B (verifying LangGraph agent)",
+  "total_questions": 25,
+  "per_bucket_summary": {
+    "1": {
+      "total": 25,
+      "passed": 6,
+      "pct": 24.0
+    },
+    "2": {
+      "total": 0,
+      "passed": 0,
+      "pct": 0.0
+    },
+    "3": {
+      "total": 0,
+      "passed": 0,
+      "pct": 0.0
+    },
+    "4": {
+      "total": 0,
+      "passed": 0,
+      "pct": 0.0
+    },
+    "5": {
+      "total": 0,
+      "passed": 0,
+      "pct": 0.0
+    },
+    "6": {
+      "total": 0,
+      "passed": 0,
+      "pct": 0.0
+    }
+  },
+  "targets": {
+    "buckets_1_2_at_least_90_percent": {
+      "target_pct": 90.0,
+      "actual_pct": 24.0,
+      "met": false
+    },
+    "bucket_3_100_percent_refusal": {
+      "target_pct": 100.0,
+      "actual_pct": 0.0,
+      "met": false
+    },
+    "bucket_4_100_percent_refusal_or_correction": {
+      "target_pct": 100.0,
+      "actual_pct": 0.0,
+      "met": false
+    }
+  },
+  "per_question": [
+    {
+      "number": 1,
+      "bucket": 1,
+      "question": "What is KlioHR's exact breach notification deadline to the supervisory authority under the General Data Protection Regulation (GDPR)?",
+      "files": "eu-gdpr/breach-notification.md",
+      "answer_spec": "72 hours, Article 33.",
+      "answer": "- Under GDPR Article 33, a controller must notify a personal data breach to the competent supervisory authority without undue delay, and where feasible, not later than 72 hours after becoming aware of it, unless the breach is unlikely to result in a risk to the rights and freedoms of natural persons. (Source: corpus/statutes/eu-gdpr/breach-notification.md; GDPR Article 33: Notification of a personal data breach to the supervisory authority)\n- If notification to the supervisory authority is not made within 72 hours, it must be accompanied by reasons for the delay. (Source: corpus/statutes/eu-gdpr/breach-notification.md; GDPR Article 33: Notification of a personal data breach to the supervisory authority)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/eu-gdpr/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/eu-gdpr/breach-notification.md",
+          "chunk_index": 0,
+          "section": "GDPR Article 33: Notification of a personal data breach to the supervisory authority",
+          "char_start": 0,
+          "char_end": 185,
+          "text": "# GDPR Article 33: Notification of a personal data breach to the supervisory authority\nSource: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/breach-notification.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/eu-gdpr/breach-notification.md",
+          "chunk_index": 1,
+          "section": "GDPR Article 33: Notification of a personal data breach to the supervisory authority",
+          "char_start": 187,
+          "char_end": 691,
+          "text": "1. In the case of a personal data breach, the controller shall without undue delay and, where feasible, not later than 72 hours after having become aware of it, notify the personal data breach to the supervisory authority competent in accordance with Article 55, unless the personal data breach is unlikely to result in a risk to the rights and freedoms of natural persons. Where the notification to the supervisory authority is not made within 72 hours, it shall be accompanied by reasons for the delay."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/breach-notification.md::4",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/eu-gdpr/breach-notification.md",
+          "chunk_index": 4,
+          "section": "GDPR Article 33: Notification of a personal data breach to the supervisory authority",
+          "char_start": 871,
+          "char_end": 1091,
+          "text": "(a) describe the nature of the personal data breach including where possible, the categories and approximate number of data subjects concerned and the categories and approximate number of personal data records concerned;"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/breach-notification.md::2",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/eu-gdpr/breach-notification.md",
+          "chunk_index": 2,
+          "section": "GDPR Article 33: Notification of a personal data breach to the supervisory authority",
+          "char_start": 693,
+          "char_end": 805,
+          "text": "2. The processor shall notify the controller without undue delay after becoming aware of a personal data breach."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/breach-notification.md::9",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/eu-gdpr/breach-notification.md",
+          "chunk_index": 9,
+          "section": "GDPR Article 33: Notification of a personal data breach to the supervisory authority",
+          "char_start": 1657,
+          "char_end": 1917,
+          "text": "5. The controller shall document any personal data breaches, comprising the facts relating to the personal data breach, its effects and the remedial action taken. That documentation shall enable the supervisory authority to verify compliance with this Article."
+        }
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "number": 2,
+      "bucket": 1,
+      "question": "How long does KlioHR have to respond to a Data Subject Request (DSR) from an European Union employee under the GDPR?",
+      "files": "eu-gdpr/dsr-response-deadline.md",
+      "answer_spec": "1 month, Article 12(3).",
+      "answer": "- Under GDPR Article 12(3), a controller must respond to a data subject request (DSR) under Articles 15 to 22 without undue delay and in any event within one month of receipt of the request. (Source: corpus/statutes/eu-gdpr/dsr-response-deadline.md; GDPR Article 12(3): Time limit for responding to a data subject request)\n- The one-month response period for a DSR may be extended by two further months when necessary, considering the complexity and number of requests. (Source: corpus/statutes/eu-gdpr/dsr-response-deadline.md; GDPR Article 12(3): Time limit for responding to a data subject request)\n- If the response period is extended, the controller must inform the data subject of the extension and the reasons for the delay within one month of receipt of the request. (Source: corpus/statutes/eu-gdpr/dsr-response-deadline.md; GDPR Article 12(3): Time limit for responding to a data subject request)\n- Where a data subject submits a request electronically, the controller should provide the information by electronic means where possible, unless the data subject requests otherwise. (Source: corpus/statutes/eu-gdpr/dsr-response-deadline.md; GDPR Article 12(3): Time limit for responding to a data subject request)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/eu-gdpr/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/eu-gdpr/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "GDPR Article 12(3): Time limit for responding to a data subject request",
+          "char_start": 0,
+          "char_end": 172,
+          "text": "# GDPR Article 12(3): Time limit for responding to a data subject request\nSource: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/dsr-response-deadline.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/eu-gdpr/dsr-response-deadline.md",
+          "chunk_index": 1,
+          "section": "GDPR Article 12(3): Time limit for responding to a data subject request",
+          "char_start": 174,
+          "char_end": 838,
+          "text": "3. The controller shall provide information on action taken on a request under Articles 15 to 22 to the data subject without undue delay and in any event within one month of receipt of the request. That period may be extended by two further months where necessary, taking into account the complexity and number of the requests. The controller shall inform the data subject of any such extension within one month of receipt of the request, together with the reasons for the delay. Where the data subject makes the request by electronic form means, the information shall be provided by electronic means where possible, unless otherwise requested by the data subject."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/cross-border-transfer.md::13",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/eu-gdpr/cross-border-transfer.md",
+          "chunk_index": 13,
+          "section": "GDPR Article 46: Transfers subject to appropriate safeguards",
+          "char_start": 2801,
+          "char_end": 2961,
+          "text": "(b) provisions to be inserted into administrative arrangements between public authorities or bodies which include enforceable and effective data subject rights."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/eu-gdpr/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "GDPR Article 44: General principle for transfers",
+          "char_start": 0,
+          "char_end": 149,
+          "text": "# GDPR Article 44: General principle for transfers\nSource: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/lawful-basis-consent.md::22",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/eu-gdpr/lawful-basis-consent.md",
+          "chunk_index": 22,
+          "section": "GDPR Article 7: Conditions for consent",
+          "char_start": 4552,
+          "char_end": 4965,
+          "text": "2. If the data subject's consent is given in the context of a written declaration which also concerns other matters, the request for consent shall be presented in a manner which is clearly distinguishable from the other matters, in an intelligible and easily accessible form, using clear and plain language. Any part of such a declaration which constitutes an infringement of this Regulation shall not be binding."
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 3,
+      "bucket": 1,
+      "question": "Does KlioHR need a Data Protection Officer (DPO) for the Dublin office, and who holds it?",
+      "files": "eu-gdpr/dpo-requirement.md",
+      "answer_spec": "required for large scale monitoring, Article 37, Elena Rostova.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/eu-gdpr/dpo-requirement.md::9",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/eu-gdpr/dpo-requirement.md",
+          "chunk_index": 9,
+          "section": "GDPR Article 37: Designation of the data protection officer",
+          "char_start": 1856,
+          "char_end": 1996,
+          "text": "6. The data protection officer may be a staff member of the controller or processor, or fulfil the tasks on the basis of a service contract."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/dpo-requirement.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/eu-gdpr/dpo-requirement.md",
+          "chunk_index": 1,
+          "section": "GDPR Article 37: Designation of the data protection officer",
+          "char_start": 162,
+          "char_end": 258,
+          "text": "1. The controller and the processor shall designate a data protection officer in any case where:"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/dpo-requirement.md::5",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/eu-gdpr/dpo-requirement.md",
+          "chunk_index": 5,
+          "section": "GDPR Article 37: Designation of the data protection officer",
+          "char_start": 863,
+          "char_end": 1020,
+          "text": "2. A group of undertakings may appoint a single data protection officer provided that a data protection officer is easily accessible from each establishment."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/dpo-requirement.md::7",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/eu-gdpr/dpo-requirement.md",
+          "chunk_index": 7,
+          "section": "GDPR Article 37: Designation of the data protection officer",
+          "char_start": 1245,
+          "char_end": 1626,
+          "text": "4. In cases other than those referred to in paragraph 1, the controller or processor or associations and other bodies representing categories of controllers or processors may or, where required by Union or Member State law shall, designate a data protection officer. The data protection officer may act for such associations and other bodies representing controllers or processors."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/eu-gdpr/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "GDPR Article 37: Designation of the data protection officer",
+          "char_start": 0,
+          "char_end": 160,
+          "text": "# GDPR Article 37: Designation of the data protection officer\nSource: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 4,
+      "bucket": 1,
+      "question": "What lawful bases can KlioHR rely on to process European Union candidate data under the GDPR?",
+      "files": "eu-gdpr/lawful-basis-consent.md",
+      "answer_spec": "Article 6 and 7.",
+      "answer": "- Processing is lawful if it is necessary for the performance of a contract to which the data subject is party, or to take steps at the request of the data subject prior to entering into a contract. (Source: corpus/statutes/eu-gdpr/lawful-basis-consent.md; GDPR Article 6: Lawfulness of processing)\n- Processing is lawful only if at least one of the enumerated conditions in Article 6(1) applies. (Source: corpus/statutes/eu-gdpr/lawful-basis-consent.md; GDPR Article 6: Lawfulness of processing)\n- Processing is lawful if it is necessary for compliance with a legal obligation to which the controller is subject. (Source: corpus/statutes/eu-gdpr/lawful-basis-consent.md; GDPR Article 6: Lawfulness of processing)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/eu-gdpr/lawful-basis-consent.md::3",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/eu-gdpr/lawful-basis-consent.md",
+          "chunk_index": 3,
+          "section": "GDPR Article 6: Lawfulness of processing",
+          "char_start": 365,
+          "char_end": 557,
+          "text": "(b) processing is necessary for the performance of a contract to which the data subject is party or in order to take steps at the request of the data subject prior to entering into a contract;"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/lawful-basis-consent.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/eu-gdpr/lawful-basis-consent.md",
+          "chunk_index": 1,
+          "section": "GDPR Article 6: Lawfulness of processing",
+          "char_start": 143,
+          "char_end": 242,
+          "text": "1. Processing shall be lawful only if and to the extent that at least one of the following applies:"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/eu-gdpr/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "GDPR Article 6: Lawfulness of processing",
+          "char_start": 0,
+          "char_end": 141,
+          "text": "# GDPR Article 6: Lawfulness of processing\nSource: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/lawful-basis-consent.md::4",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/eu-gdpr/lawful-basis-consent.md",
+          "chunk_index": 4,
+          "section": "GDPR Article 6: Lawfulness of processing",
+          "char_start": 559,
+          "char_end": 661,
+          "text": "(c) processing is necessary for compliance with a legal obligation to which the controller is subject;"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/lawful-basis-consent.md::10",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/eu-gdpr/lawful-basis-consent.md",
+          "chunk_index": 10,
+          "section": "GDPR Article 6: Lawfulness of processing",
+          "char_start": 1822,
+          "char_end": 1924,
+          "text": "3. The basis for the processing referred to in point (c) and (e) of paragraph 1 shall be laid down by:"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 5,
+      "bucket": 1,
+      "question": "What is required to transfer European Union personal data to Boston headquarters under the GDPR?",
+      "files": "eu-gdpr/cross-border-transfer.md",
+      "answer_spec": "Article 44 and 46, Standard Contractual Clauses (SCCs) or an adequacy decision.",
+      "answer": "- Transfers of personal data to a third country (such as the US, where Boston is located) may only take place if the conditions laid down in Chapter V of the GDPR are complied with by the controller and processor, including for onward transfers. (Source: corpus/statutes/eu-gdpr/cross-border-transfer.md; GDPR Article 44: General principle for transfers)\n- All provisions of the transfer chapter must be applied so that the level of protection for individuals guaranteed by the GDPR is not undermined by the transfer. (Source: corpus/statutes/eu-gdpr/cross-border-transfer.md; GDPR Article 44: General principle for transfers)\n- Absent an adequacy decision, a controller or processor may only transfer personal data to a third country if it has provided appropriate safeguards, and enforceable data subject rights and effective legal remedies for data subjects must be available. (Source: corpus/statutes/eu-gdpr/cross-border-transfer.md; GDPR Article 46: Transfers subject to appropriate safeguards)\n- One form of appropriate safeguard permitting the transfer is the use of contractual clauses between the controller/processor and the recipient of the personal data in the third country. (Source: corpus/statutes/eu-gdpr/cross-border-transfer.md; GDPR Article 46: Transfers subject to appropriate safeguards)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/eu-gdpr/cross-border-transfer.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/eu-gdpr/cross-border-transfer.md",
+          "chunk_index": 1,
+          "section": "GDPR Article 44: General principle for transfers",
+          "char_start": 151,
+          "char_end": 818,
+          "text": "Any transfer of personal data which are undergoing processing or are intended for processing after transfer to a third country or to an international organisation shall take place only if, subject to the other provisions of this Regulation, the conditions laid down in this Chapter are complied with by the controller and processor, including for onward transfers of personal data from the third country or an international organisation to another third country or to another international organisation. All provisions in this Chapter shall be applied in order to ensure that the level of protection of natural persons guaranteed by this Regulation is not undermined."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/cross-border-transfer.md::3",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/eu-gdpr/cross-border-transfer.md",
+          "chunk_index": 3,
+          "section": "GDPR Article 46: Transfers subject to appropriate safeguards",
+          "char_start": 983,
+          "char_end": 1335,
+          "text": "1. In the absence of a decision pursuant to Article 45(3), a controller or processor may transfer personal data to a third country or an international organisation only if the controller or processor has provided appropriate safeguards, and on condition that enforceable data subject rights and effective legal remedies for data subjects are available."
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/cross-border-transfer.md::12",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/eu-gdpr/cross-border-transfer.md",
+          "chunk_index": 12,
+          "section": "GDPR Article 46: Transfers subject to appropriate safeguards",
+          "char_start": 2617,
+          "char_end": 2799,
+          "text": "(a) contractual clauses between the controller or processor and the controller, processor or the recipient of the personal data in the third country or international organisation; or"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/eu-gdpr/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "GDPR Article 44: General principle for transfers",
+          "char_start": 0,
+          "char_end": 149,
+          "text": "# GDPR Article 44: General principle for transfers\nSource: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/eu-gdpr/cross-border-transfer.md::2",
+          "doc_type": "statute",
+          "jurisdiction": "eu-gdpr",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/eu-gdpr/cross-border-transfer.md",
+          "chunk_index": 2,
+          "section": "GDPR Article 46: Transfers subject to appropriate safeguards",
+          "char_start": 820,
+          "char_end": 981,
+          "text": "# GDPR Article 46: Transfers subject to appropriate safeguards\nSource: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32016R0679\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 6,
+      "bucket": 1,
+      "question": "What is Rahul Sharma's breach notification deadline under India's Digital Personal Data Protection Act (DPDP Act)?",
+      "files": "india-dpdp/breach-notification.md",
+      "answer_spec": "no fixed deadline stated, Section 8(6).",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/india-dpdp/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/india-dpdp/breach-notification.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 8(6): Personal data breach, general obligation",
+          "char_start": 0,
+          "char_end": 169,
+          "text": "# DPDP Act Section 8(6): Personal data breach, general obligation\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/india-dpdp/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline",
+          "char_start": 0,
+          "char_end": 190,
+          "text": "# DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/india-dpdp/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 4: Grounds for processing personal data",
+          "char_start": 0,
+          "char_end": 162,
+          "text": "# DPDP Act Section 4: Grounds for processing personal data\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/india-dpdp/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 16: Processing of personal data outside India",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# DPDP Act Section 16: Processing of personal data outside India\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/india-dpdp/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary",
+          "char_start": 0,
+          "char_end": 201,
+          "text": "# DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 7,
+      "bucket": 1,
+      "question": "How fast must KlioHR resolve an Indian employee's grievance under the DPDP Act?",
+      "files": "india-dpdp/dsr-response-deadline.md",
+      "answer_spec": "as may be prescribed, Section 13(2).",
+      "answer": "- The DPDP Act does not specify an exact number of days for grievance resolution; it requires resolution within a period to be prescribed separately. (Source: corpus/statutes/india-dpdp/dsr-response-deadline.md; DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline)\n- The Act itself does not state an exact number of days for grievance response, and this may need to be checked against the DPDP Rules 2025 for a specific deadline. (Source: corpus/statutes/india-dpdp/dsr-response-deadline.md; DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/india-dpdp/dsr-response-deadline.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/india-dpdp/dsr-response-deadline.md",
+          "chunk_index": 1,
+          "section": "DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline",
+          "char_start": 192,
+          "char_end": 431,
+          "text": "Note: the Act does not state an exact number of days for grievance response. Section 13(2) says \"within such period as may be prescribed.\" Flagged as needing a follow-up check against the DPDP Rules 2025 if an exact number is needed later."
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/india-dpdp/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline",
+          "char_start": 0,
+          "char_end": 190,
+          "text": "# DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/dsr-response-deadline.md::12",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/india-dpdp/dsr-response-deadline.md",
+          "chunk_index": 12,
+          "section": "DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline",
+          "char_start": 1867,
+          "char_end": 2082,
+          "text": "(2) The Data Fiduciary or Consent Manager shall respond to any grievances referred to in sub-section (1) within such period as may be prescribed from the date of its receipt for all or any class of Data Fiduciaries."
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/india-dpdp/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 16: Processing of personal data outside India",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# DPDP Act Section 16: Processing of personal data outside India\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/india-dpdp/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 4: Grounds for processing personal data",
+          "char_start": 0,
+          "char_end": 162,
+          "text": "# DPDP Act Section 4: Grounds for processing personal data\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 8,
+      "bucket": 1,
+      "question": "Is KlioHR required to appoint a Data Protection Officer in India under the DPDP Act?",
+      "files": "india-dpdp/dpo-requirement.md",
+      "answer_spec": "only for Significant Data Fiduciaries, Section 10(2)(a).",
+      "answer": "- Under the DPDP Act, the requirement to appoint a Data Protection Officer applies specifically to a Significant Data Fiduciary, not to all data fiduciaries. (Source: corpus/statutes/india-dpdp/dpo-requirement.md; DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary)\n- Section 10(2)(a) of the DPDP Act requires appointment of a Data Protection Officer as part of the obligations imposed on Significant Data Fiduciaries. (Source: corpus/statutes/india-dpdp/dpo-requirement.md; DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary)\n- The DPDP Act's consent provisions reference a Data Protection Officer as an optional contact point, indicating a DPO is only required 'where applicable' rather than for all data fiduciaries. (Source: corpus/statutes/india-dpdp/lawful-basis-consent.md; DPDP Act Section 6: Consent)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/india-dpdp/dpo-requirement.md::2",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/india-dpdp/dpo-requirement.md",
+          "chunk_index": 2,
+          "section": "DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary",
+          "char_start": 246,
+          "char_end": 294,
+          "text": "(a) appoint a Data Protection Officer who shall,"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/india-dpdp/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary",
+          "char_start": 0,
+          "char_end": 201,
+          "text": "# DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/india-dpdp/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline",
+          "char_start": 0,
+          "char_end": 190,
+          "text": "# DPDP Act Sections 11, 12, 13: Data Principal rights and grievance redressal deadline\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/lawful-basis-consent.md::8",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/india-dpdp/lawful-basis-consent.md",
+          "chunk_index": 8,
+          "section": "DPDP Act Section 6: Consent",
+          "char_start": 1228,
+          "char_end": 1786,
+          "text": "(3) Every request for consent under the provisions of this Act or the rules made thereunder shall be presented to the Data Principal in a clear and plain language, giving her the option to access such request in English or any language specified in the Eighth Schedule to the Constitution and providing the contact details of a Data Protection Officer, where applicable, or of any other person authorised by the Data Fiduciary to respond to any communication from the Data Principal for the purpose of exercise of her rights under the provisions of this Act."
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/india-dpdp/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 16: Processing of personal data outside India",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# DPDP Act Section 16: Processing of personal data outside India\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "number": 9,
+      "bucket": 1,
+      "question": "What is the lawful basis standard for Indian candidate data under the DPDP Act?",
+      "files": "india-dpdp/lawful-basis-consent.md",
+      "answer_spec": "Section 4 and 6.",
+      "answer": "- Under the DPDP Act, personal data of a Data Principal may only be processed in accordance with the Act's provisions and for a lawful purpose. (Source: corpus/statutes/india-dpdp/lawful-basis-consent.md; DPDP Act Section 4: Grounds for processing personal data)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/india-dpdp/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/india-dpdp/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 4: Grounds for processing personal data",
+          "char_start": 0,
+          "char_end": 162,
+          "text": "# DPDP Act Section 4: Grounds for processing personal data\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/cross-border-transfer.md::2",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/india-dpdp/cross-border-transfer.md",
+          "chunk_index": 2,
+          "section": "DPDP Act Section 16: Processing of personal data outside India",
+          "char_start": 360,
+          "char_end": 677,
+          "text": "(2) Nothing contained in this section shall restrict the applicability of any law for the time being in force in India that provides for a higher degree of protection for or restriction on transfer of personal data by a Data Fiduciary outside India in relation to any personal data or Data Fiduciary or class thereof."
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/lawful-basis-consent.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/india-dpdp/lawful-basis-consent.md",
+          "chunk_index": 1,
+          "section": "DPDP Act Section 4: Grounds for processing personal data",
+          "char_start": 164,
+          "char_end": 303,
+          "text": "(1) A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose,"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/india-dpdp/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary",
+          "char_start": 0,
+          "char_end": 201,
+          "text": "# DPDP Act Section 10(2)(a): Data Protection Officer requirement for a Significant Data Fiduciary\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/india-dpdp/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 16: Processing of personal data outside India",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# DPDP Act Section 16: Processing of personal data outside India\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 10,
+      "bucket": 1,
+      "question": "Can Rahul Sharma freely move Indian personal data to Boston headquarters under the DPDP Act?",
+      "files": "india-dpdp/cross-border-transfer.md",
+      "answer_spec": "Section 16, Central Government can restrict.",
+      "answer": "- Under the DPDP Act, the Central Government can, by notification, restrict transfer of personal data by a Data Fiduciary to specified countries or territories outside India, meaning transfers are permitted by default unless a specific country/territory has been restricted. (Source: corpus/statutes/india-dpdp/cross-border-transfer.md; DPDP Act Section 16: Processing of personal data outside India)\n- Cross-border transfer of personal data outside India remains subject to any other Indian law providing a higher degree of protection or restriction on such transfers, which could limit or condition Rahul Sharma's ability to move data to Boston. (Source: corpus/statutes/india-dpdp/cross-border-transfer.md; DPDP Act Section 16: Processing of personal data outside India)\n- Any processing of personal data, including transfers, must have a lawful basis under the DPDP Act, such as processing only in accordance with the Act and for a lawful purpose. (Source: corpus/statutes/india-dpdp/lawful-basis-consent.md; DPDP Act Section 4: Grounds for processing personal data)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/india-dpdp/cross-border-transfer.md::2",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/india-dpdp/cross-border-transfer.md",
+          "chunk_index": 2,
+          "section": "DPDP Act Section 16: Processing of personal data outside India",
+          "char_start": 360,
+          "char_end": 677,
+          "text": "(2) Nothing contained in this section shall restrict the applicability of any law for the time being in force in India that provides for a higher degree of protection for or restriction on transfer of personal data by a Data Fiduciary outside India in relation to any personal data or Data Fiduciary or class thereof."
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/cross-border-transfer.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/india-dpdp/cross-border-transfer.md",
+          "chunk_index": 1,
+          "section": "DPDP Act Section 16: Processing of personal data outside India",
+          "char_start": 170,
+          "char_end": 358,
+          "text": "(1) The Central Government may, by notification, restrict the transfer of personal data by a Data Fiduciary for processing to such country or territory outside India as may be so notified."
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/india-dpdp/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 16: Processing of personal data outside India",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# DPDP Act Section 16: Processing of personal data outside India\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/india-dpdp/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "DPDP Act Section 4: Grounds for processing personal data",
+          "char_start": 0,
+          "char_end": 162,
+          "text": "# DPDP Act Section 4: Grounds for processing personal data\nSource: Digital Personal Data Protection Act 2023, Gazette of India, 11 Aug 2023.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/india-dpdp/lawful-basis-consent.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "india-dpdp",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/india-dpdp/lawful-basis-consent.md",
+          "chunk_index": 1,
+          "section": "DPDP Act Section 4: Grounds for processing personal data",
+          "char_start": 164,
+          "char_end": 303,
+          "text": "(1) A person may process the personal data of a Data Principal only in accordance with the provisions of this Act and for a lawful purpose,"
+        }
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "number": 11,
+      "bucket": 1,
+      "question": "What is Sarah Jenkins's breach notification deadline under California law?",
+      "files": "california/breach-notification.md",
+      "answer_spec": "30 days, Civil Code Section 1798.82.",
+      "answer": "- Under California law, breach notification disclosure must be made within 30 calendar days of discovery or notification of the data breach. (Source: corpus/statutes/california/breach-notification.md; California Civil Code Section 1798.82: Breach of security of computerized data)\n- The 30-day disclosure deadline may be delayed to accommodate legitimate law enforcement needs or to determine the scope of the breach and restore the reasonable integrity of the data system. (Source: corpus/statutes/california/breach-notification.md; California Civil Code Section 1798.82: Breach of security of computerized data)\n- If a breach affects more than 500 California residents, a sample copy of the notification must be submitted to the Attorney General within 15 calendar days of notifying affected consumers. (Source: corpus/statutes/california/breach-notification.md; California Civil Code Section 1798.82: Breach of security of computerized data)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/california/breach-notification.md::17",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/california/breach-notification.md",
+          "chunk_index": 17,
+          "section": "California Civil Code Section 1798.82: Breach of security of computerized data",
+          "char_start": 4731,
+          "char_end": 5026,
+          "text": "(C) If the information is possible to determine at the time the notice is provided, then any of the following: (i) the date of the breach, (ii) the estimated date of the breach, or (iii) the date range within which the breach occurred. The notification shall also include the date of the notice."
+        },
+        {
+          "_id": "corpus/statutes/california/breach-notification.md::27",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/california/breach-notification.md",
+          "chunk_index": 27,
+          "section": "California Civil Code Section 1798.82: Breach of security of computerized data",
+          "char_start": 7112,
+          "char_end": 7763,
+          "text": "(f) An individual or business that is required to issue a security breach notification pursuant to this section to more than 500 California residents as a result of a single breach of the security system shall electronically submit a single sample copy of that security breach notification, excluding any personally identifiable information, to the Attorney General within 15 calendar days of notifying affected consumers of the security breach. A single sample copy of a security breach notification shall not be deemed to be within Article 1 (commencing with Section 7923.600) of Chapter 1 of Part 5 of Division 10 of Title 1 of the Government Code."
+        },
+        {
+          "_id": "corpus/statutes/california/breach-notification.md::2",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/california/breach-notification.md",
+          "chunk_index": 2,
+          "section": "California Civil Code Section 1798.82: Breach of security of computerized data",
+          "char_start": 1329,
+          "char_end": 1496,
+          "text": "(2) (A) Subject to subparagraph (B), the disclosure required by this subdivision shall be made within 30 calendar days of discovery or notification of the data breach."
+        },
+        {
+          "_id": "corpus/statutes/california/breach-notification.md::3",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/california/breach-notification.md",
+          "chunk_index": 3,
+          "section": "California Civil Code Section 1798.82: Breach of security of computerized data",
+          "char_start": 1498,
+          "char_end": 1776,
+          "text": "(B) An individual or business may delay the disclosure required by this subdivision to accommodate the legitimate needs of law enforcement, pursuant to subdivision (c), or as necessary to determine the scope of the breach and restore the reasonable integrity of the data system."
+        },
+        {
+          "_id": "corpus/statutes/california/breach-notification.md::14",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/california/breach-notification.md",
+          "chunk_index": 14,
+          "section": "California Civil Code Section 1798.82: Breach of security of computerized data",
+          "char_start": 4383,
+          "char_end": 4502,
+          "text": "(2) The security breach notification described in paragraph (1) shall include, at a minimum, the following information:"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 12,
+      "bucket": 1,
+      "question": "How many days does KlioHR have to respond to a California deletion request under the California Consumer Privacy Act / California Privacy Rights Act (CCPA/CPRA)?",
+      "files": "california/dsr-response-deadline.md",
+      "answer_spec": "45 days, extendable once, Section 1798.130.",
+      "answer": "- Under CCPA/CPRA, a business must delete a consumer's personal information based on a verifiable consumer request within 45 days of receiving the request. (Source: corpus/statutes/california/dsr-response-deadline.md; California Civil Code Section 1798.130: Notice, Disclosure, Correction, and Deletion Requirements)\n- The 45-day period to respond to a deletion request may be extended once by an additional 45 days when reasonably necessary, provided the consumer is notified of the extension within the initial 45-day period. (Source: corpus/statutes/california/dsr-response-deadline.md; California Civil Code Section 1798.130: Notice, Disclosure, Correction, and Deletion Requirements)\n- Determining whether a request is verifiable does not extend the business's duty to delete personal information within 45 days of receipt. (Source: corpus/statutes/california/dsr-response-deadline.md; California Civil Code Section 1798.130: Notice, Disclosure, Correction, and Deletion Requirements)\n- Summary confirmation that the deadline for CCPA/CPRA deletion requests is 45 days from receipt, extendable once by another 45 days with notice to the consumer. (Source: corpus/statutes/california/dsr-response-deadline.md; California Civil Code Section 1798.130: Notice, Disclosure, Correction, and Deletion Requirements)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/california/dsr-response-deadline.md::3",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/california/dsr-response-deadline.md",
+          "chunk_index": 3,
+          "section": "California Civil Code Section 1798.130: Notice, Disclosure, Correction, and Deletion Requirements",
+          "char_start": 482,
+          "char_end": 1378,
+          "text": "(2) (A) Disclose and deliver the required information to a consumer free of charge, correct inaccurate personal information, or delete a consumer's personal information, based on the consumer's request, within 45 days of receiving a verifiable consumer request from the consumer. The business shall promptly take steps to determine whether the request is a verifiable consumer request, but this shall not extend the business' duty to disclose and deliver the information, to correct inaccurate personal information, or to delete personal information within 45 days of receipt of the consumer's request. The time period to provide the required information, to correct inaccurate personal information, or to delete personal information may be extended once by an additional 45 days when reasonably necessary, provided the consumer is provided notice of the extension within the first 45-day period."
+        },
+        {
+          "_id": "corpus/statutes/california/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/california/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "California CCPA/CPRA: No general Data Protection Officer mandate",
+          "char_start": 0,
+          "char_end": 88,
+          "text": "# California CCPA/CPRA: No general Data Protection Officer mandate\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/california/dsr-response-deadline.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/california/dsr-response-deadline.md",
+          "chunk_index": 1,
+          "section": "California Civil Code Section 1798.130: Notice, Disclosure, Correction, and Deletion Requirements",
+          "char_start": 170,
+          "char_end": 306,
+          "text": "Note: deadline is 45 days from receipt of a verifiable consumer request, extendable once by another 45 days with notice to the consumer."
+        },
+        {
+          "_id": "corpus/statutes/california/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/california/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "California Civil Code Section 1798.130: Notice, Disclosure, Correction, and Deletion Requirements",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# California Civil Code Section 1798.130: Notice, Disclosure, Correction, and Deletion Requirements\nSource: California Civil Code Section 1798.130\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/california/dpo-requirement.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/california/dpo-requirement.md",
+          "chunk_index": 1,
+          "section": "California CCPA/CPRA: No general Data Protection Officer mandate",
+          "char_start": 90,
+          "char_end": 384,
+          "text": "California has no general Data Protection Officer mandate under the CCPA/CPRA. Unlike GDPR, India DPDP, Brazil LGPD, and Singapore PDPA, California law does not require businesses to appoint a DPO. This is a structural gap in the jurisdiction, relevant to the project's sparse-cell eval bucket."
+        }
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "number": 13,
+      "bucket": 1,
+      "question": "Is Sarah Jenkins a statutory Data Protection Officer under the CCPA/CPRA?",
+      "files": "california/dpo-requirement.md",
+      "answer_spec": "no general DPO mandate exists.",
+      "answer": "- California's CCPA/CPRA does not have a general requirement for businesses to appoint a Data Protection Officer, so there is no statutory basis for anyone to be a 'statutory DPO' under this law. (Source: corpus/statutes/california/dpo-requirement.md; California CCPA/CPRA: No general Data Protection Officer mandate)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/california/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/california/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "California CCPA/CPRA: No general Data Protection Officer mandate",
+          "char_start": 0,
+          "char_end": 88,
+          "text": "# California CCPA/CPRA: No general Data Protection Officer mandate\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/california/dpo-requirement.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/california/dpo-requirement.md",
+          "chunk_index": 1,
+          "section": "California CCPA/CPRA: No general Data Protection Officer mandate",
+          "char_start": 90,
+          "char_end": 384,
+          "text": "California has no general Data Protection Officer mandate under the CCPA/CPRA. Unlike GDPR, India DPDP, Brazil LGPD, and Singapore PDPA, California law does not require businesses to appoint a DPO. This is a structural gap in the jurisdiction, relevant to the project's sparse-cell eval bucket."
+        },
+        {
+          "_id": "corpus/statutes/california/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/california/breach-notification.md",
+          "chunk_index": 0,
+          "section": "California Civil Code Section 1798.82: Breach of security of computerized data",
+          "char_start": 0,
+          "char_end": 433,
+          "text": "# California Civil Code Section 1798.82: Breach of security of computerized data\nSource: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.82.\nRetrieved: 2026-08-17\nNote: this is California's data breach notification statute. It sits in the Civil Code, not the CCPA/CPRA sections (which start at 1798.100), since the user's request flagged that breach notification is not in CCPA itself."
+        },
+        {
+          "_id": "corpus/statutes/california/lawful-basis-consent.md::9",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/california/lawful-basis-consent.md",
+          "chunk_index": 9,
+          "section": "California Civil Code Section 1798.100: General Duties of Businesses that Collect Personal Information",
+          "char_start": 3581,
+          "char_end": 3803,
+          "text": "(2) Obligates the third party, service provider, or contractor to comply with applicable obligations under this title and obligate those persons to provide the same level of privacy protection as is required by this title."
+        },
+        {
+          "_id": "corpus/statutes/california/breach-notification.md::23",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/california/breach-notification.md",
+          "chunk_index": 23,
+          "section": "California Civil Code Section 1798.82: Breach of security of computerized data",
+          "char_start": 6192,
+          "char_end": 6314,
+          "text": "(A) Information about what the individual or business has done to protect individuals whose information has been breached."
+        }
+      ],
+      "passed": true,
+      "error": null
+    },
+    {
+      "number": 14,
+      "bucket": 1,
+      "question": "What consent model applies to California users under the CCPA/CPRA?",
+      "files": "california/lawful-basis-consent.md",
+      "answer_spec": "opt out model, Section 1798.100.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/california/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/california/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "California CCPA/CPRA: No general Data Protection Officer mandate",
+          "char_start": 0,
+          "char_end": 88,
+          "text": "# California CCPA/CPRA: No general Data Protection Officer mandate\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/california/dpo-requirement.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/california/dpo-requirement.md",
+          "chunk_index": 1,
+          "section": "California CCPA/CPRA: No general Data Protection Officer mandate",
+          "char_start": 90,
+          "char_end": 384,
+          "text": "California has no general Data Protection Officer mandate under the CCPA/CPRA. Unlike GDPR, India DPDP, Brazil LGPD, and Singapore PDPA, California law does not require businesses to appoint a DPO. This is a structural gap in the jurisdiction, relevant to the project's sparse-cell eval bucket."
+        },
+        {
+          "_id": "corpus/statutes/california/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/california/breach-notification.md",
+          "chunk_index": 0,
+          "section": "California Civil Code Section 1798.82: Breach of security of computerized data",
+          "char_start": 0,
+          "char_end": 433,
+          "text": "# California Civil Code Section 1798.82: Breach of security of computerized data\nSource: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.82.\nRetrieved: 2026-08-17\nNote: this is California's data breach notification statute. It sits in the Civil Code, not the CCPA/CPRA sections (which start at 1798.100), since the user's request flagged that breach notification is not in CCPA itself."
+        },
+        {
+          "_id": "corpus/statutes/california/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/california/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "California Civil Code Section 1798.100: General Duties of Businesses that Collect Personal Information",
+          "char_start": 0,
+          "char_end": 235,
+          "text": "# California Civil Code Section 1798.100: General Duties of Businesses that Collect Personal Information\nSource: https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1798.100.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/california/cross-border-transfer.md::9",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/california/cross-border-transfer.md",
+          "chunk_index": 9,
+          "section": "California Civil Code Section 1798.140: Definitions of \"Sell\" and \"Share\"",
+          "char_start": 1453,
+          "char_end": 1601,
+          "text": "(A) A consumer uses or directs the business to intentionally disclose personal information or intentionally interact with one or more third parties."
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 15,
+      "bucket": 1,
+      "question": "Does moving California employee data to Singapore count as a sale under the CCPA/CPRA?",
+      "files": "california/cross-border-transfer.md",
+      "answer_spec": "Section 1798.140(ad), internal business use does not qualify.",
+      "answer": "- California law defines specific circumstances under which a business does not 'sell' personal information, such as when personal information is transferred as an asset in a merger, acquisition, bankruptcy, or similar transaction where the third party assumes control of the business. (Source: corpus/statutes/california/cross-border-transfer.md; California Civil Code Section 1798.140: Definitions of \"Sell\" and \"Share\")\n- The California Civil Code Section 1798.140 provides definitions and exceptions for what does not constitute a 'sale' of personal information under CCPA/CPRA, but the retrieved text does not specifically address whether an intra-company or intra-organizational cross-border transfer (e.g., to Singapore) for business operations purposes qualifies as a 'sale'. (Source: corpus/statutes/california/cross-border-transfer.md; California Civil Code Section 1798.140: Definitions of \"Sell\" and \"Share\")",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/california/dpo-requirement.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/california/dpo-requirement.md",
+          "chunk_index": 1,
+          "section": "California CCPA/CPRA: No general Data Protection Officer mandate",
+          "char_start": 90,
+          "char_end": 384,
+          "text": "California has no general Data Protection Officer mandate under the CCPA/CPRA. Unlike GDPR, India DPDP, Brazil LGPD, and Singapore PDPA, California law does not require businesses to appoint a DPO. This is a structural gap in the jurisdiction, relevant to the project's sparse-cell eval bucket."
+        },
+        {
+          "_id": "corpus/statutes/california/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/california/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "California CCPA/CPRA: No general Data Protection Officer mandate",
+          "char_start": 0,
+          "char_end": 88,
+          "text": "# California CCPA/CPRA: No general Data Protection Officer mandate\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/california/cross-border-transfer.md::2",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/california/cross-border-transfer.md",
+          "chunk_index": 2,
+          "section": "California Civil Code Section 1798.140: Definitions of \"Sell\" and \"Share\"",
+          "char_start": 509,
+          "char_end": 592,
+          "text": "(2) For purposes of this title, a business does not sell personal information when:"
+        },
+        {
+          "_id": "corpus/statutes/california/cross-border-transfer.md::6",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/california/cross-border-transfer.md",
+          "chunk_index": 6,
+          "section": "California Civil Code Section 1798.140: Definitions of \"Sell\" and \"Share\"",
+          "char_start": 740,
+          "char_end": 979,
+          "text": "(C) The business transfers to a third party the personal information of a consumer as an asset that is part of a merger, acquisition, bankruptcy, or other transaction in which the third party assumes control of all or part of the business."
+        },
+        {
+          "_id": "corpus/statutes/california/cross-border-transfer.md::10",
+          "doc_type": "statute",
+          "jurisdiction": "california",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/california/cross-border-transfer.md",
+          "chunk_index": 10,
+          "section": "California Civil Code Section 1798.140: Definitions of \"Sell\" and \"Share\"",
+          "char_start": 1603,
+          "char_end": 1842,
+          "text": "(C) The business transfers to a third party the personal information of a consumer as an asset that is part of a merger, acquisition, bankruptcy, or other transaction in which the third party assumes control of all or part of the business."
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/singapore-pdpa/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 26: Transfer of personal data outside Singapore",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# PDPA Section 26: Transfer of personal data outside Singapore\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/cross-border-transfer.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/singapore-pdpa/cross-border-transfer.md",
+          "chunk_index": 1,
+          "section": "PDPA Section 26: Transfer of personal data outside Singapore",
+          "char_start": 170,
+          "char_end": 485,
+          "text": "26.-(1) An organisation must not transfer any personal data to a country or territory outside Singapore except in accordance with requirements prescribed under this Act to ensure that organisations provide a standard of protection to personal data so transferred that is comparable to the protection under this Act."
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::4",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 4,
+          "section": "PDPA Section 14: Requirements for consent",
+          "char_start": 576,
+          "char_end": 725,
+          "text": "# PDPA Section 14: Requirements for consent\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 13: Consent required",
+          "char_start": 0,
+          "char_end": 141,
+          "text": "# PDPA Section 13: Consent required\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 21(1): Access to personal data",
+          "char_start": 0,
+          "char_end": 151,
+          "text": "# PDPA Section 21(1): Access to personal data\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 16,
+      "bucket": 1,
+      "question": "What is Camila Santos's breach notification deadline under Brazil's Lei Geral de Protecao de Dados (LGPD, General Data Protection Law)?",
+      "files": "brazil-lgpd/breach-notification.md",
+      "answer_spec": "reasonable term, no fixed number, Article 48.",
+      "answer": "- LGPD does not specify an exact number of days for breach notification; instead it requires notification within a reasonable term as defined by the supervisory authority, unlike GDPR's 72 hours or Singapore's 3 calendar days. (Source: corpus/statutes/brazil-lgpd/breach-notification.md; LGPD Article 48: Notification of security incident)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/brazil-lgpd/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/brazil-lgpd/breach-notification.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 48: Notification of security incident",
+          "char_start": 0,
+          "char_end": 516,
+          "text": "# LGPD Article 48: Notification of security incident\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/breach-notification.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/brazil-lgpd/breach-notification.md",
+          "chunk_index": 1,
+          "section": "LGPD Article 48: Notification of security incident",
+          "char_start": 518,
+          "char_end": 807,
+          "text": "Note: LGPD does not specify an exact number of days for breach notification, unlike GDPR (72 hours) or Singapore (3 calendar days). It says \"within a reasonable term, as defined by the supervisory authority.\" Flagged as a sparse/vague-deadline cell, useful for the adversarial eval bucket."
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 19: Deadline to confirm existence of or provide access to personal data",
+          "char_start": 0,
+          "char_end": 550,
+          "text": "# LGPD Article 19: Deadline to confirm existence of or provide access to personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/brazil-lgpd/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 41: Data protection officer",
+          "char_start": 0,
+          "char_end": 506,
+          "text": "# LGPD Article 41: Data protection officer\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/brazil-lgpd/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 33: International transfer of personal data",
+          "char_start": 0,
+          "char_end": 522,
+          "text": "# LGPD Article 33: International transfer of personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 17,
+      "bucket": 1,
+      "question": "How many days does KlioHR have to respond to a Brazilian employee's access request under the LGPD?",
+      "files": "brazil-lgpd/dsr-response-deadline.md",
+      "answer_spec": "15 days, Article 19.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 19: Deadline to confirm existence of or provide access to personal data",
+          "char_start": 0,
+          "char_end": 550,
+          "text": "# LGPD Article 19: Deadline to confirm existence of or provide access to personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/brazil-lgpd/breach-notification.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 48: Notification of security incident",
+          "char_start": 0,
+          "char_end": 516,
+          "text": "# LGPD Article 48: Notification of security incident\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/breach-notification.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/brazil-lgpd/breach-notification.md",
+          "chunk_index": 1,
+          "section": "LGPD Article 48: Notification of security incident",
+          "char_start": 518,
+          "char_end": 807,
+          "text": "Note: LGPD does not specify an exact number of days for breach notification, unlike GDPR (72 hours) or Singapore (3 calendar days). It says \"within a reasonable term, as defined by the supervisory authority.\" Flagged as a sparse/vague-deadline cell, useful for the adversarial eval bucket."
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/brazil-lgpd/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 41: Data protection officer",
+          "char_start": 0,
+          "char_end": 506,
+          "text": "# LGPD Article 41: Data protection officer\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/brazil-lgpd/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 33: International transfer of personal data",
+          "char_start": 0,
+          "char_end": 522,
+          "text": "# LGPD Article 33: International transfer of personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 18,
+      "bucket": 1,
+      "question": "What is Camila Santos's official title under the LGPD?",
+      "files": "brazil-lgpd/dpo-requirement.md",
+      "answer_spec": "Encarregado, required for all controllers, Article 41.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/brazil-lgpd/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 41: Data protection officer",
+          "char_start": 0,
+          "char_end": 506,
+          "text": "# LGPD Article 41: Data protection officer\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 7: Legal bases for processing personal data",
+          "char_start": 0,
+          "char_end": 522,
+          "text": "# LGPD Article 7: Legal bases for processing personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md::12",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md",
+          "chunk_index": 12,
+          "section": "LGPD Article 8: Form of consent",
+          "char_start": 1864,
+          "char_end": 2361,
+          "text": "# LGPD Article 8: Form of consent\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/brazil-lgpd/breach-notification.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 48: Notification of security incident",
+          "char_start": 0,
+          "char_end": 516,
+          "text": "# LGPD Article 48: Notification of security incident\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 19: Deadline to confirm existence of or provide access to personal data",
+          "char_start": 0,
+          "char_end": 550,
+          "text": "# LGPD Article 19: Deadline to confirm existence of or provide access to personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 19,
+      "bucket": 1,
+      "question": "What lawful bases apply to Brazilian candidate data under the LGPD?",
+      "files": "brazil-lgpd/lawful-basis-consent.md",
+      "answer_spec": "Article 7 and 8.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 7: Legal bases for processing personal data",
+          "char_start": 0,
+          "char_end": 522,
+          "text": "# LGPD Article 7: Legal bases for processing personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/brazil-lgpd/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 33: International transfer of personal data",
+          "char_start": 0,
+          "char_end": 522,
+          "text": "# LGPD Article 33: International transfer of personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md::12",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md",
+          "chunk_index": 12,
+          "section": "LGPD Article 8: Form of consent",
+          "char_start": 1864,
+          "char_end": 2361,
+          "text": "# LGPD Article 8: Form of consent\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/brazil-lgpd/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 41: Data protection officer",
+          "char_start": 0,
+          "char_end": 506,
+          "text": "# LGPD Article 41: Data protection officer\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 19: Deadline to confirm existence of or provide access to personal data",
+          "char_start": 0,
+          "char_end": 550,
+          "text": "# LGPD Article 19: Deadline to confirm existence of or provide access to personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 20,
+      "bucket": 1,
+      "question": "What mechanism lets KlioHR move Brazilian personal data to United States East servers under the LGPD?",
+      "files": "brazil-lgpd/cross-border-transfer.md",
+      "answer_spec": "Article 33, Autoridade Nacional de Protecao de Dados (ANPD) approved Standard Contractual Clauses.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/brazil-lgpd/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/brazil-lgpd/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 33: International transfer of personal data",
+          "char_start": 0,
+          "char_end": 522,
+          "text": "# LGPD Article 33: International transfer of personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/brazil-lgpd/breach-notification.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 48: Notification of security incident",
+          "char_start": 0,
+          "char_end": 516,
+          "text": "# LGPD Article 48: Notification of security incident\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/brazil-lgpd/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 7: Legal bases for processing personal data",
+          "char_start": 0,
+          "char_end": 522,
+          "text": "# LGPD Article 7: Legal bases for processing personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/brazil-lgpd/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 41: Data protection officer",
+          "char_start": 0,
+          "char_end": 506,
+          "text": "# LGPD Article 41: Data protection officer\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "brazil-lgpd",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/brazil-lgpd/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "LGPD Article 19: Deadline to confirm existence of or provide access to personal data",
+          "char_start": 0,
+          "char_end": 550,
+          "text": "# LGPD Article 19: Deadline to confirm existence of or provide access to personal data\nSource: Brazilian General Data Protection Law (LGPD), Law No. 13,709/2018 as amended by Law No. 13,853/2019. Unofficial English translation by Luca Belli, Laila Lorenzon and Lua Fergus, CyberBRICS Project at FGV Law School. Note: the official ANPD English translation site was unavailable at time of sourcing (Aug 2026); this is a widely cited academic translation, used here since it is a faithful rendering of the original Portuguese text.\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 21,
+      "bucket": 1,
+      "question": "What is David Chen's deadline to notify Singapore's Personal Data Protection Commission (PDPC) under the Personal Data Protection Act (PDPA)?",
+      "files": "singapore-pdpa/breach-notification.md",
+      "answer_spec": "3 calendar days, Section 26D.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/singapore-pdpa/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/singapore-pdpa/breach-notification.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 26D: Duty to notify Commission and affected individuals",
+          "char_start": 0,
+          "char_end": 176,
+          "text": "# PDPA Section 26D: Duty to notify Commission and affected individuals\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/singapore-pdpa/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 11(3) and 11(5): Data protection officer designation",
+          "char_start": 0,
+          "char_end": 173,
+          "text": "# PDPA Section 11(3) and 11(5): Data protection officer designation\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 21(1): Access to personal data",
+          "char_start": 0,
+          "char_end": 151,
+          "text": "# PDPA Section 21(1): Access to personal data\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/singapore-pdpa/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 26: Transfer of personal data outside Singapore",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# PDPA Section 26: Transfer of personal data outside Singapore\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 13: Consent required",
+          "char_start": 0,
+          "char_end": 141,
+          "text": "# PDPA Section 13: Consent required\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 22,
+      "bucket": 1,
+      "question": "How fast must KlioHR respond to a Singapore access request under the PDPA?",
+      "files": "singapore-pdpa/dsr-response-deadline.md",
+      "answer_spec": "as soon as reasonably possible, Section 21.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 21(1): Access to personal data",
+          "char_start": 0,
+          "char_end": 151,
+          "text": "# PDPA Section 21(1): Access to personal data\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/singapore-pdpa/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 26: Transfer of personal data outside Singapore",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# PDPA Section 26: Transfer of personal data outside Singapore\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/singapore-pdpa/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 11(3) and 11(5): Data protection officer designation",
+          "char_start": 0,
+          "char_end": 173,
+          "text": "# PDPA Section 11(3) and 11(5): Data protection officer designation\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 13: Consent required",
+          "char_start": 0,
+          "char_end": 141,
+          "text": "# PDPA Section 13: Consent required\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::4",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 4,
+          "section": "PDPA Section 14: Requirements for consent",
+          "char_start": 576,
+          "char_end": 725,
+          "text": "# PDPA Section 14: Requirements for consent\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 23,
+      "bucket": 1,
+      "question": "Is David Chen's role legally required under the PDPA?",
+      "files": "singapore-pdpa/dpo-requirement.md",
+      "answer_spec": "yes, one or more individuals must be designated, Section 11(3).",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/singapore-pdpa/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 11(3) and 11(5): Data protection officer designation",
+          "char_start": 0,
+          "char_end": 173,
+          "text": "# PDPA Section 11(3) and 11(5): Data protection officer designation\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 13: Consent required",
+          "char_start": 0,
+          "char_end": 141,
+          "text": "# PDPA Section 13: Consent required\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::4",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 4,
+          "section": "PDPA Section 14: Requirements for consent",
+          "char_start": 576,
+          "char_end": 725,
+          "text": "# PDPA Section 14: Requirements for consent\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/breach-notification.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "breach-notification",
+          "relative_path": "corpus/statutes/singapore-pdpa/breach-notification.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 26D: Duty to notify Commission and affected individuals",
+          "char_start": 0,
+          "char_end": 176,
+          "text": "# PDPA Section 26D: Duty to notify Commission and affected individuals\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 21(1): Access to personal data",
+          "char_start": 0,
+          "char_end": 151,
+          "text": "# PDPA Section 21(1): Access to personal data\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 24,
+      "bucket": 1,
+      "question": "What consent standards apply in Singapore under the PDPA?",
+      "files": "singapore-pdpa/lawful-basis-consent.md",
+      "answer_spec": "Section 13 and 14.",
+      "answer": "The retrieved and verified information does not answer this question.",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::4",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 4,
+          "section": "PDPA Section 14: Requirements for consent",
+          "char_start": 576,
+          "char_end": 725,
+          "text": "# PDPA Section 14: Requirements for consent\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 13: Consent required",
+          "char_start": 0,
+          "char_end": 141,
+          "text": "# PDPA Section 13: Consent required\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/singapore-pdpa/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 26: Transfer of personal data outside Singapore",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# PDPA Section 26: Transfer of personal data outside Singapore\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/singapore-pdpa/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 11(3) and 11(5): Data protection officer designation",
+          "char_start": 0,
+          "char_end": 173,
+          "text": "# PDPA Section 11(3) and 11(5): Data protection officer designation\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 21(1): Access to personal data",
+          "char_start": 0,
+          "char_end": 151,
+          "text": "# PDPA Section 21(1): Access to personal data\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": false,
+      "error": null
+    },
+    {
+      "number": 25,
+      "bucket": 1,
+      "question": "What governs KlioHR moving Singapore personal data abroad under the PDPA?",
+      "files": "singapore-pdpa/cross-border-transfer.md",
+      "answer_spec": "comparable standard of protection, Section 26.",
+      "answer": "- Under Singapore's PDPA, an organisation must not transfer personal data outside Singapore unless it complies with requirements prescribed under the Act to ensure a comparable standard of protection is provided to the transferred data. (Source: corpus/statutes/singapore-pdpa/cross-border-transfer.md; PDPA Section 26: Transfer of personal data outside Singapore)",
+      "retrieved_chunks": [
+        {
+          "_id": "corpus/statutes/singapore-pdpa/cross-border-transfer.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/singapore-pdpa/cross-border-transfer.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 26: Transfer of personal data outside Singapore",
+          "char_start": 0,
+          "char_end": 168,
+          "text": "# PDPA Section 26: Transfer of personal data outside Singapore\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/cross-border-transfer.md::1",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "cross-border-transfer",
+          "relative_path": "corpus/statutes/singapore-pdpa/cross-border-transfer.md",
+          "chunk_index": 1,
+          "section": "PDPA Section 26: Transfer of personal data outside Singapore",
+          "char_start": 170,
+          "char_end": 485,
+          "text": "26.-(1) An organisation must not transfer any personal data to a country or territory outside Singapore except in accordance with requirements prescribed under this Act to ensure that organisations provide a standard of protection to personal data so transferred that is comparable to the protection under this Act."
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dpo-requirement.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dpo-requirement",
+          "relative_path": "corpus/statutes/singapore-pdpa/dpo-requirement.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 11(3) and 11(5): Data protection officer designation",
+          "char_start": 0,
+          "char_end": 173,
+          "text": "# PDPA Section 11(3) and 11(5): Data protection officer designation\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md::0",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "dsr-response-deadline",
+          "relative_path": "corpus/statutes/singapore-pdpa/dsr-response-deadline.md",
+          "chunk_index": 0,
+          "section": "PDPA Section 21(1): Access to personal data",
+          "char_start": 0,
+          "char_end": 151,
+          "text": "# PDPA Section 21(1): Access to personal data\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        },
+        {
+          "_id": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md::4",
+          "doc_type": "statute",
+          "jurisdiction": "singapore-pdpa",
+          "theme": "lawful-basis-consent",
+          "relative_path": "corpus/statutes/singapore-pdpa/lawful-basis-consent.md",
+          "chunk_index": 4,
+          "section": "PDPA Section 14: Requirements for consent",
+          "char_start": 576,
+          "char_end": 725,
+          "text": "# PDPA Section 14: Requirements for consent\nSource: Personal Data Protection Act 2012, 2020 Revised Edition, Singapore Statutes\nRetrieved: 2026-08-17"
+        }
+      ],
+      "passed": true,
+      "error": null
+    }
+  ]
+}
