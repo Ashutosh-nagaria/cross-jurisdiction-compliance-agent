@@ -157,52 +157,69 @@ with tab_single:
 
         if data["awaiting_approval"]:
             pending = data["pending"]
-            st.subheader("Human approval required")
-            st.write(
-                "System B has verified its claims against the real statute "
-                "text, but nothing is final yet. Review what it found below, "
-                "then approve or reject it."
-            )
 
-            verified = pending["verified_claims"]
-            rejected = pending["rejected_claims"]
-
-            if verified:
-                st.write(f"Verified claims ({len(verified)}), ready to release if approved:")
-                for claim in verified:
-                    st.write(f"- {claim['claim']} (Source: {claim['source_file']})")
-            else:
-                st.write("No claims survived verification for this question.")
-
-            if rejected:
+            with st.container(border=True):
+                st.subheader(":material/pending_actions: Human approval required")
                 st.write(
-                    f"Rejected claims ({len(rejected)}), left out because their "
-                    "quoted text did not match the source file word for word:"
+                    "System B has verified its claims against the real statute "
+                    "text, but nothing is final yet. Review what it found below, "
+                    "then approve or reject it."
                 )
-                for claim in rejected:
-                    st.write(f"- {claim['claim']}")
 
-            col_approve, col_reject = st.columns(2)
-            with col_approve:
-                if st.button("Approve", key="approve_single"):
-                    with st.spinner("Finalizing..."):
-                        final = resume_with_decision(pending["thread_id"], True)
-                    st.session_state["single_result"] = {
-                        "system": "System B",
-                        "result": final,
-                        "awaiting_approval": False,
-                    }
-                    st.rerun()
-            with col_reject:
-                if st.button("Reject", key="reject_single"):
-                    with st.spinner("Recording rejection..."):
-                        final = resume_with_decision(pending["thread_id"], False)
-                    st.session_state["single_result"] = {
-                        "system": "System B",
-                        "result": final,
-                        "awaiting_approval": False,
-                    }
-                    st.rerun()
+                verified = pending["verified_claims"]
+                rejected = pending["rejected_claims"]
+
+                if verified:
+                    st.write(f"Verified claims ({len(verified)}), ready to release if approved:")
+                    for claim in verified:
+                        st.write(f"- {claim['claim']} (Source: {claim['source_file']})")
+                else:
+                    st.write("No claims survived verification for this question.")
+
+                if rejected:
+                    st.write(
+                        f"Rejected claims ({len(rejected)}), left out because their "
+                        "quoted text did not match the source file word for word:"
+                    )
+                    for claim in rejected:
+                        st.write(f"- {claim['claim']}")
+
+                st.divider()
+
+                col_approve, col_reject = st.columns(2)
+                with col_approve:
+                    if st.button(
+                        "Approve",
+                        key="approve_single",
+                        type="primary",
+                        icon=":material/check_circle:",
+                        use_container_width=True,
+                        help="Release this answer as final, using only the verified claims above",
+                    ):
+                        with st.spinner("Finalizing..."):
+                            final = resume_with_decision(pending["thread_id"], True)
+                        st.session_state["single_result"] = {
+                            "system": "System B",
+                            "result": final,
+                            "awaiting_approval": False,
+                        }
+                        st.rerun()
+                with col_reject:
+                    if st.button(
+                        "Reject",
+                        key="reject_single",
+                        icon=":material/cancel:",
+                        use_container_width=True,
+                        help="Discard this answer entirely, nothing is released",
+                    ):
+                        with st.spinner("Recording rejection..."):
+                            final = resume_with_decision(pending["thread_id"], False)
+                        st.session_state["single_result"] = {
+                            "system": "System B",
+                            "result": final,
+                            "awaiting_approval": False,
+                        }
+                        st.rerun()
         else:
             st.subheader(f"{data['system']} answer")
             st.write(data["result"]["answer"])
