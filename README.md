@@ -30,6 +30,12 @@ using the same 90 question benchmark.
   text. It cannot generate a wrong number, because it never generates
   a number at all.
 
+| System | Approach | Key tech | Tradeoff |
+|---|---|---|---|
+| System A | Baseline retrieval augmented generation | Voyage embeddings, MongoDB Atlas vector search, Claude | Fast and simple, but citation accuracy depends on the model remembering to state it correctly |
+| System B | Verified agentic pipeline with human approval | LangGraph, MongoDB Atlas vector search, Claude, deterministic verification | Most reliable citations, but slower and more costly per question |
+| System C | Deterministic rule lookup | Claude for classification only, a fixed lookup table | Cannot invent a wrong fact, but has no flexibility or judgment |
+
 ## Headline result
 
 A deterministic lookup table wins decisively on questions that have a
