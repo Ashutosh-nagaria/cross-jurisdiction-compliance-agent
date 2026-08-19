@@ -1,3 +1,4 @@
+mixpanel
 langgraph
 langchain-anthropic
 anthropic
