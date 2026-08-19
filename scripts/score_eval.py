@@ -87,21 +87,21 @@ def call_system(question, system_name):
     list for systems that do not do retrieval, or have not been built yet.
     """
     if system_name == "system_a":
-        # Chapter 5: System A (baseline retrieval) is built, this is it.
+        # Chapter 5: Best Effort (baseline retrieval) is built, this is it.
         from src.system_a import answer_question
 
         result = answer_question(question["question"])
         return result["answer"], result.get("retrieved_chunks", [])
 
     if system_name == "system_b":
-        # Chapter 7: System B (the verifying LangGraph agent) is built, this is it.
+        # Chapter 7: Chain of Custody (the verifying LangGraph agent) is built, this is it.
         from src.system_b import answer_question
 
         result = answer_question(question["question"])
         return result["answer"], result.get("retrieved_chunks", [])
 
     if system_name == "system_c":
-        # Chapter 9: System C (the deterministic rule lookup) is built, this is it.
+        # Chapter 9: Ground Truth (the deterministic rule lookup) is built, this is it.
         from src.system_c import answer_question
 
         result = answer_question(question["question"])
@@ -561,9 +561,9 @@ def build_report(results, system_name):
 
     system_labels = {
         "placeholder": "placeholder (no compliance system built yet)",
-        "system_a": "System A (baseline retrieval and answer)",
-        "system_b": "System B (verifying LangGraph agent)",
-        "system_c": "System C (deterministic rule lookup)",
+        "system_a": "Best Effort (baseline retrieval and answer)",
+        "system_b": "Chain of Custody (verifying LangGraph agent)",
+        "system_c": "Ground Truth (deterministic rule lookup)",
     }
 
     return {

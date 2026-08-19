@@ -6,7 +6,7 @@
   </defs>
 
   <rect x="0" y="0" width="1080" height="190" fill="#f6f8fa"/>
-  <text x="540" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a202c">System A: Baseline Retrieval Augmented Generation</text>
+  <text x="540" y="26" text-anchor="middle" font-size="18" font-weight="bold" fill="#1a202c">Best Effort: Baseline Retrieval Augmented Generation</text>
 
   <!-- Question -->
   <rect x="20" y="60" width="120" height="70" rx="10" fill="#eef2f7" stroke="#4a5568" stroke-width="1.5"/>

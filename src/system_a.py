@@ -1,5 +1,5 @@
 """
-System A: the baseline retrieval and answer system (Chapter 5).
+Best Effort: the baseline retrieval and answer system (Chapter 5).
 
 Given a question, this finds the most relevant chunks of statute and
 company text already stored in MongoDB Atlas (from Chapter 4), then asks
@@ -195,7 +195,7 @@ def call_claude(prompt):
 
 def answer_question(question):
     """
-    Runs the full System A pipeline for one question: embed the
+    Runs the full Best Effort pipeline for one question: embed the
     question, retrieve the closest chunks, build the prompt, call
     Claude, and return both the answer text and which chunks were used.
     Keeping the retrieved chunks alongside the answer is what lets a

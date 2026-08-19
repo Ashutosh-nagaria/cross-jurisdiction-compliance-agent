@@ -1,5 +1,7 @@
 # Cross Jurisdiction Compliance Agent
 
+**Live demo:** [cross-jurisdiction-compliance-agent.streamlit.app](https://cross-jurisdiction-compliance-agent.streamlit.app/)
+
 Compliance teams that operate across multiple countries often need to
 answer questions like "how many days do we have to report a data
 breach," and the correct answer depends entirely on which country's
@@ -16,15 +18,15 @@ Rather than building one system and assuming it works, this project
 builds and evaluates three different approaches to the same problem,
 using the same 90 question benchmark.
 
-- **System A** is a baseline retrieval and answer system. It searches
+- **Best Effort** is a baseline retrieval and answer system. It searches
   the statute text for relevant passages and lets an AI model write
   the answer in its own words, citing where each fact came from.
-- **System B** is a more careful, multi step agent. It figures out
+- **Chain of Custody** is a more careful, multi step agent. It figures out
   which country a question is about, retrieves text separately for
   each one, pulls out individual factual claims, verifies every claim
   word for word against the real statute text, and pauses for a human
   to approve the answer before it counts as final.
-- **System C** is a deterministic rule lookup. It uses an AI model
+- **Ground Truth** is a deterministic rule lookup. It uses an AI model
   only to classify which jurisdiction and topic a question is about,
   then returns a fixed answer built directly from the real statute
   text. It cannot generate a wrong number, because it never generates
@@ -32,9 +34,9 @@ using the same 90 question benchmark.
 
 | System | Approach | Key tech | Tradeoff |
 |---|---|---|---|
-| System A | Baseline retrieval augmented generation | Voyage embeddings, MongoDB Atlas vector search, Claude | Fast and simple, but citation accuracy depends on the model remembering to state it correctly |
-| System B | Verified agentic pipeline with human approval | LangGraph, MongoDB Atlas vector search, Claude, deterministic verification | Most reliable citations, but slower and more costly per question |
-| System C | Deterministic rule lookup | Claude for classification only, a fixed lookup table | Cannot invent a wrong fact, but has no flexibility or judgment |
+| Best Effort | Baseline retrieval augmented generation | Voyage embeddings, MongoDB Atlas vector search, Claude | Fast and simple, but citation accuracy depends on the model remembering to state it correctly |
+| Chain of Custody | Verified agentic pipeline with human approval | LangGraph, MongoDB Atlas vector search, Claude, deterministic verification | Most reliable citations, but slower and more costly per question |
+| Ground Truth | Deterministic rule lookup | Claude for classification only, a fixed lookup table | Cannot invent a wrong fact, but has no flexibility or judgment |
 
 ## Headline result
 
@@ -50,15 +52,26 @@ for the full numbers.
 
 ## Running it
 
-The easiest way to try this interactively is the Streamlit interface:
+The easiest way to try this is the live demo above, or locally with
+the same Streamlit interface:
 
     streamlit run app.py
 
-This lets you ask any of the three systems a question, see its
-citations, and for System B specifically, approve or reject its answer
-yourself before it is treated as final, the same way a real reviewer
-would. See [DEPLOY.md](DEPLOY.md) for how to build and run the whole
-thing in a container instead.
+Pick a system from the dropdown, type a question about a data breach,
+consent, or retention rule in any of the five jurisdictions, and
+submit it. Each answer comes back with the exact statute section it
+was pulled from. Pick Chain of Custody specifically to see its extra
+step: it pauses partway through and shows you the individual claims
+it verified against the source text, then waits for you to approve
+or reject the answer before treating it as final, the same way a
+real compliance reviewer would. The "Compare all three" tab runs the
+same question through all three systems at once, side by side.
+
+The live demo is a public, shared instance, so it caps total usage at
+a small number of questions per day across every visitor combined,
+shown on the page. Running it locally with your own API keys has no
+such cap. See [DEPLOY.md](DEPLOY.md) for how to build and run the
+whole thing in a container instead.
 
 ## Read more
 

@@ -1,8 +1,8 @@
 """
-System B: the verifying LangGraph agent (Chapter 7).
+Chain of Custody: the verifying LangGraph agent (Chapter 7).
 
-Unlike System A, which retrieves once and lets Claude write a free-form
-answer, System B breaks answering a question into five separate steps
+Unlike Best Effort, which retrieves once and lets Claude write a free-form
+answer, Chain of Custody breaks answering a question into five separate steps
 wired together as a LangGraph graph, with a verification step that
 checks every claim against the real source text before it is allowed
 into the final answer, and a human approval step before anything is
@@ -68,7 +68,7 @@ VALID_JURISDICTIONS = [
 TOP_K_PER_JURISDICTION = 5
 NUM_CANDIDATES = 60
 
-# Same Voyage AI free tier pacing as System A (see src/system_a.py and
+# Same Voyage AI free tier pacing as Best Effort (see src/system_a.py and
 # Chapter 4), since this project's Voyage account has no payment method
 # on file and is capped at 3 requests per minute.
 SECONDS_BETWEEN_VOYAGE_CALLS = 21
@@ -183,7 +183,7 @@ def call_claude_structured(prompt, tool_name, tool_description, input_schema):
 def embed_question(question):
     """
     Turns the question into a Voyage AI embedding, same model and same
-    free tier pacing as System A (see src/system_a.py for the full
+    free tier pacing as Best Effort (see src/system_a.py for the full
     explanation of why the pacing exists).
     """
     global _last_voyage_call_time
@@ -396,7 +396,7 @@ def claim_is_verified(claim):
 
 def verify_claims_node(state):
     """
-    Step 4: the core safety check of System B. Every claim extracted in
+    Step 4: the core safety check of Chain of Custody. Every claim extracted in
     step 3 gets checked here, and only the ones whose quoted text
     genuinely appears in the real source file survive. Anything that
     does not check out, whether from a model mistake, a hallucinated
@@ -538,7 +538,7 @@ def _get_graph():
 
 def answer_question(question):
     """
-    Runs the full System B pipeline for one question: route, retrieve,
+    Runs the full Chain of Custody pipeline for one question: route, retrieve,
     extract, verify, and pause for approval. Since there is no human
     reviewer available during automated scoring, this function detects
     the pause, logs what a reviewer would have seen, and resumes the
@@ -593,7 +593,7 @@ def answer_question(question):
 
 def start_question(question):
     """
-    Runs System B up through the human approval pause, and returns
+    Runs Chain of Custody up through the human approval pause, and returns
     what a reviewer needs to see, without deciding anything. Call
     resume_with_decision afterward with the same thread_id once a
     person has actually made a decision.
@@ -635,7 +635,7 @@ def start_question(question):
 
 def resume_with_decision(thread_id, approved):
     """
-    Resumes a paused System B run with a real decision from a human
+    Resumes a paused Chain of Custody run with a real decision from a human
     reviewer, and returns the final answer. approved should be True
     for an actual Approve click, False for Reject.
     """

@@ -28,9 +28,9 @@ requests. Writing the test before the thing being tested is a
 deliberate choice, it stops the questions from quietly being shaped
 around whatever a system already happens to get right.
 
-## 2. Building System A and running the first evaluation
+## 2. Building Best Effort and running the first evaluation
 
-System A came first because it is the simplest shape: embed the
+Best Effort came first because it is the simplest shape: embed the
 question, search for the closest statute passages, hand those passages
 to a model along with strict instructions to only use what it was
 given, and return the answer.
@@ -81,12 +81,12 @@ behavior, refusal, correction, an honest admission of uncertainty,
 rather than any specific wording, and they were held to that standard
 even as the exact detection patterns were refined further later on.
 
-## 4. Building System B, the verified agentic pipeline
+## 4. Building Chain of Custody, the verified agentic pipeline
 
-System B exists because System A's biggest weakness is that a single
+Chain of Custody exists because Best Effort's biggest weakness is that a single
 model call has to retrieve, reason, and phrase a citation correctly all
 at once, with nothing double checking any of those steps against each
-other. System B breaks that into five separate steps instead.
+other. Chain of Custody breaks that into five separate steps instead.
 
 ```mermaid
 flowchart TD
@@ -131,7 +131,7 @@ restrictions, which resolved it completely.
 
 ## 6. The missing citation bug
 
-Once the router was fixed, a different problem showed up: System B's
+Once the router was fixed, a different problem showed up: Chain of Custody's
 answers cited the correct source file about half the time, and simply
 did not mention the specific article or section number the rest of the
 time. Each verified claim actually carried three pieces of information,
@@ -187,9 +187,9 @@ since it was first built, one a looser system had no way of ever
 noticing, because a looser system never checked that field closely
 enough to fail.
 
-## 8. Building System C and finding its structural blind spot
+## 8. Building Ground Truth and finding its structural blind spot
 
-System C is the deterministic lookup: a hand built table of the real
+Ground Truth is the deterministic lookup: a hand built table of the real
 25 statute facts, with an AI model used only to classify which row of
 that table a question maps to, never to state a fact on its own. Its
 evaluation was, as expected, extremely strong on anything with a fixed,
@@ -199,26 +199,26 @@ It also revealed something structural, not a bug to be fixed. A small
 number of the adversarial test questions, ones designed to manipulate
 the system into leaking information it should refuse to provide, were
 classified to the nearest matching topic and answered plainly and
-factually anyway, without any refusal at all. System C has no concept
+factually anyway, without any refusal at all. Ground Truth has no concept
 of intent, only classification and lookup. It was never given a step
 whose job is to ask whether a question should be answered in the first
 place, and no amount of tuning the lookup table changes that, since the
 lookup table is not where that decision would live. This is a
-permanent property of how System C is built, not something a patch
+permanent property of how Ground Truth is built, not something a patch
 would fix without turning it into a different kind of system entirely.
 
 ## 9. Budget reality
 
-System A and System C were both evaluated on the complete 90 question
-set. System B was evaluated on a smaller slice, 25 questions, on
-purpose, not by accident. System B's five step pipeline makes multiple
+Best Effort and Ground Truth were both evaluated on the complete 90 question
+set. Chain of Custody was evaluated on a smaller slice, 25 questions, on
+purpose, not by accident. Chain of Custody's five step pipeline makes multiple
 separate model calls per question instead of one, plus its own
 retrieval and verification work, which made a full run meaningfully
 slower and more expensive than the other two systems, on a fixed time
 and cost budget for this project.
 
 This is worth stating plainly rather than glossing over: the smaller
-sample is a real limitation on how confidently System B's numbers can
+sample is a real limitation on how confidently Chain of Custody's numbers can
 be compared to the other two, and it is exactly the kind of tradeoff a
 real team has to make under a real budget, deciding which parts of an
 evaluation get full coverage and which get a smaller, still useful,
@@ -252,7 +252,7 @@ plain keyword matching, would guarantee that a question using an exact
 term straight out of the statute finds the right passage, rather than
 depending only on the embedding model to recognize the connection.
 
-**A full evaluation of System B.** Completing the full 90 question run
+**A full evaluation of Chain of Custody.** Completing the full 90 question run
 for the agentic pipeline, with a larger budget, would turn its current
 partial results into a real, directly comparable number against the
 other two systems.

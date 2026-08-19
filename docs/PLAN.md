@@ -29,31 +29,31 @@ chapters depend on earlier ones being done first.
   Search, using Voyage's law-domain embedding model to turn text into
   searchable vectors.
 
-- **Chapter 5: Build System A (baseline RAG)**
+- **Chapter 5: Build Best Effort (baseline RAG)**
   A standard retrieve-then-answer pipeline. Run the 90 question benchmark
   against it to get a baseline score.
 
 - **Chapter 6: Improve retrieval**
   Add hybrid search (combining keyword and vector search) and reranking to
-  System A, then measure whether that improves the benchmark score.
+  Best Effort, then measure whether that improves the benchmark score.
 
-- **Chapter 7: Build System B (agent)**
+- **Chapter 7: Build Chain of Custody (agent)**
   A LangGraph agent that extracts specific compliance obligations, checks
   each one against its source statute text, and drafts a policy based on
   what it found.
 
 - **Chapter 8: Human approval step**
-  Before any drafted obligation from System B is accepted, a person must
+  Before any drafted obligation from Chain of Custody is accepted, a person must
   review and approve it. Nothing gets treated as final without that
   approval.
 
-- **Chapter 9: Build System C (rule lookup)**
+- **Chapter 9: Build Ground Truth (rule lookup)**
   A deterministic lookup system for numeric facts (like "how many days to
   respond to a data subject request in Brazil"), with no model involved in
   producing the number itself.
 
 - **Chapter 10: Compare all three systems**
-  Run System A, System B, and System C on the same 90 question benchmark
+  Run Best Effort, Chain of Custody, and Ground Truth on the same 90 question benchmark
   and publish the results side by side.
 
 - **Chapter 11: Build the interface**

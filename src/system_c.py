@@ -1,19 +1,19 @@
 """
-System C: the deterministic rule lookup (Chapter 9).
+Ground Truth: the deterministic rule lookup (Chapter 9).
 
-Systems A and B both let an AI model generate the actual answer text.
-System C does not. Every fact this system can state is hardcoded below
+Best Effort and Chain of Custody both let an AI model generate the actual answer text.
+Ground Truth does not. Every fact this system can state is hardcoded below
 in LOOKUP_TABLE, copied directly from the 25 statute files in
 corpus/statutes/, not generated or paraphrased by any model. The only
 job an AI model does here is figure out which jurisdiction and theme a
 question is asking about, so the right table row can be looked up. The
 model never gets to invent, phrase, or embellish the actual legal fact.
 
-This makes System C the most trustworthy of the three systems for a
+This makes Ground Truth the most trustworthy of the three systems for a
 narrow set of questions (exact numbers, exact citations), and the
 least flexible: it cannot draft documents, compare jurisdictions in
 prose, or handle anything outside its five jurisdictions and five
-themes. It is meant to be compared against Systems A and B in Chapter
+themes. It is meant to be compared against Best Effort and Chain of Custody in Chapter
 10, not to replace them.
 """
 
@@ -260,7 +260,7 @@ def classify_question(question):
     comparison question) this question is about, using a forced tool
     call so the response is data, not prose. Keeping this prompt short
     is deliberate: a longer version with extra caveats and edge case
-    instructions was found, while building System B, to sometimes
+    instructions was found, while building Chain of Custody, to sometimes
     trigger a refusal from the model for unrelated reasons. A short,
     direct prompt has proven reliable.
     """
@@ -337,7 +337,7 @@ def build_answer(targets):
 
 def answer_question(question):
     """
-    Runs System C end to end: classify which table rows the question is
+    Runs Ground Truth end to end: classify which table rows the question is
     about, then return exactly what those rows say. retrieved_chunks is
     returned as an empty list since this system does not use vector
     search at all, it looks answers up in a fixed table instead.
