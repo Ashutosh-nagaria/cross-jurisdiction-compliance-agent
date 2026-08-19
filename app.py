@@ -1,13 +1,11 @@
-from mixpanel import Mixpanel
+import os
 
-
-from mixpanel import Consumer
+from mixpanel import Mixpanel, Consumer
 
 mp = Mixpanel(
-    "bcfd28d9c0c1756f464e7e5c96a94fbf",
+    os.environ.get("MIXPANEL_TOKEN", "bcfd28d9c0c1756f464e7e5c96a94fbf"),
     consumer=Consumer(api_host="api-eu.mixpanel.com"),
 )
-
 # Chapter 11: a small Streamlit web app for the compliance agent.
 #
 # Streamlit turns a plain Python script into a web page with buttons,
