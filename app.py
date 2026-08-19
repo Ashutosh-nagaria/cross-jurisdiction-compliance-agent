@@ -1,19 +1,27 @@
-"""
-Chapter 11: a small Streamlit web app for the compliance agent.
+from mixpanel import Mixpanel
 
-Streamlit turns a plain Python script into a web page with buttons,
-text boxes, and tables, without writing any HTML, CSS, or JavaScript.
-This one file is the whole app: pick a system, ask a question, see the
-answer and its citations, and for Chain of Custody specifically, review and
-actually approve or reject the answer before it counts as final.
 
-Nothing in this file calls an AI model, a database, or the internet
-just by starting the app or opening the page. A call only happens once
-someone actually submits a question, which is the point where using
-this app starts to cost a small amount of real API money.
+from mixpanel import Consumer
 
-Run this with: streamlit run app.py
-"""
+mp = Mixpanel(
+    "bcfd28d9c0c1756f464e7e5c96a94fbf",
+    consumer=Consumer(api_host="api-eu.mixpanel.com"),
+)
+
+# Chapter 11: a small Streamlit web app for the compliance agent.
+#
+# Streamlit turns a plain Python script into a web page with buttons,
+# text boxes, and tables, without writing any HTML, CSS, or JavaScript.
+# This one file is the whole app: pick a system, ask a question, see the
+# answer and its citations, and for Chain of Custody specifically, review and
+# actually approve or reject the answer before it counts as final.
+#
+# Nothing in this file calls an AI model, a database, or the internet
+# just by starting the app or opening the page. A call only happens once
+# someone actually submits a question, which is the point where using
+# this app starts to cost a small amount of real API money.
+#
+# Run this with: streamlit run app.py
 
 import streamlit as st
 
@@ -22,6 +30,10 @@ from src.rate_limit import DAILY_LIMIT, get_remaining_today, try_use_budget
 from src.system_b import resume_with_decision, start_question
 
 st.set_page_config(page_title="Cross Jurisdiction Compliance Agent", layout="wide")
+
+if "mp_app_opened_tracked" not in st.session_state:
+    mp.track("demo_visitor", "App Opened")
+    st.session_state["mp_app_opened_tracked"] = True
 
 st.title("Cross Jurisdiction Compliance Agent")
 
@@ -103,6 +115,34 @@ def render_citations(system_name, result):
                 st.caption(f"- {target['jurisdiction']} / {target['theme']}")
 
 
+GREETING_WORDS = {
+    "hi", "hello", "hey", "yo", "sup", "who are you", "what are you",
+    "what is this", "help", "test", "hi there", "hey there",
+}
+
+
+def is_likely_off_topic(text):
+    """
+    A cheap, free guard that catches greetings and vague test inputs
+    before spending a real retrieval call and a real AI model call on
+    them. Not perfect, just filters the obvious cases.
+    """
+    cleaned = text.strip().lower().rstrip("?!.")
+    if len(cleaned) < 8:
+        return True
+    if cleaned in GREETING_WORDS:
+        return True
+    return False
+
+
+COMPLIANCE_BOT_INTRO = (
+    "Hi, I'm a data privacy compliance assistant. Ask me a specific "
+    "question about breach notification, consent, DSR deadlines, DPO "
+    "requirements, or cross-border transfer rules across the EU, "
+    "India, California, Brazil, or Singapore."
+)
+
+
 tab_single, tab_compare = st.tabs(["Ask one system", "Compare all three"])
 
 # --- Ask one system ------------------------------------------------------
@@ -120,29 +160,37 @@ with tab_single:
     ask_clicked = st.button("Ask", key="ask_single")
 
     if ask_clicked and question:
-        if not try_use_budget(1):
+        if is_likely_off_topic(question):
+            st.session_state["single_result"] = None
+            st.info(COMPLIANCE_BOT_INTRO)
+        elif not try_use_budget(1):
             st.error(
                 "Today's shared question budget has been used up by visitors "
                 "to this demo. Please come back after it resets, at midnight "
                 "UTC."
             )
         elif system_choice == "Best Effort":
+            mp.track("demo_visitor", "Question Submitted", {"system": "Best Effort", "question": question})
             with st.spinner("Asking Best Effort..."):
                 result = system_a.answer_question(question)
+            mp.track("demo_visitor", "Answer Displayed", {"system": "Best Effort"})
             st.session_state["single_result"] = {
                 "system": "Best Effort",
                 "result": result,
                 "awaiting_approval": False,
             }
         elif system_choice == "Ground Truth":
+            mp.track("demo_visitor", "Question Submitted", {"system": "Ground Truth", "question": question})
             with st.spinner("Asking Ground Truth..."):
                 result = system_c.answer_question(question)
+            mp.track("demo_visitor", "Answer Displayed", {"system": "Ground Truth"})
             st.session_state["single_result"] = {
                 "system": "Ground Truth",
                 "result": result,
                 "awaiting_approval": False,
             }
         else:
+            mp.track("demo_visitor", "Question Submitted", {"system": "Chain of Custody", "question": question})
             with st.spinner("Asking Chain of Custody, this takes longer than the other two..."):
                 pending = start_question(question)
             st.session_state["single_result"] = {
@@ -151,7 +199,7 @@ with tab_single:
                 "awaiting_approval": True,
             }
 
-    if "single_result" in st.session_state:
+    if st.session_state.get("single_result"):
         data = st.session_state["single_result"]
         st.divider()
 
@@ -198,6 +246,7 @@ with tab_single:
                     ):
                         with st.spinner("Finalizing..."):
                             final = resume_with_decision(pending["thread_id"], True)
+                        mp.track("demo_visitor", "Answer Displayed", {"system": "Chain of Custody", "decision": "approved"})
                         st.session_state["single_result"] = {
                             "system": "Chain of Custody",
                             "result": final,
@@ -214,6 +263,7 @@ with tab_single:
                     ):
                         with st.spinner("Recording rejection..."):
                             final = resume_with_decision(pending["thread_id"], False)
+                        mp.track("demo_visitor", "Answer Rejected", {"system": "Chain of Custody"})
                         st.session_state["single_result"] = {
                             "system": "Chain of Custody",
                             "result": final,
@@ -245,7 +295,9 @@ with tab_compare:
     compare_question = st.text_input("Your question", key="compare_question")
     compare_clicked = st.button("Compare all three", key="compare_button")
 
-    if compare_clicked and compare_question and not try_use_budget(3):
+    if compare_clicked and compare_question and is_likely_off_topic(compare_question):
+        st.info(COMPLIANCE_BOT_INTRO)
+    elif compare_clicked and compare_question and not try_use_budget(3):
         st.error(
             "Comparing all three systems needs 3 units of today's shared "
             "question budget, and not enough remain. Try \"Ask one system\" "
@@ -253,6 +305,7 @@ with tab_compare:
             "midnight UTC."
         )
     elif compare_clicked and compare_question:
+        mp.track("demo_visitor", "Question Submitted", {"system": "Compare All Three", "question": compare_question})
         col_a, col_b, col_c = st.columns(3)
 
         with col_a:
@@ -276,3 +329,5 @@ with tab_compare:
                 result_c = system_c.answer_question(compare_question)
             st.write(result_c["answer"])
             render_citations("Ground Truth", result_c)
+
+        mp.track("demo_visitor", "Answer Displayed", {"system": "Compare All Three"})

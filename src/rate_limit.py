@@ -22,7 +22,7 @@ from pymongo import MongoClient
 
 load_dotenv()
 
-DAILY_LIMIT = 3
+DAILY_LIMIT = 20
 DATABASE_NAME = "compliance_agent"
 COLLECTION_NAME = "daily_usage"
 
