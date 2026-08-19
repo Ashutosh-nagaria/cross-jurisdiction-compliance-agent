@@ -67,11 +67,20 @@ or reject the answer before treating it as final, the same way a
 real compliance reviewer would. The "Compare all three" tab runs the
 same question through all three systems at once, side by side.
 
+![Asking Best Effort a question and getting a cited answer](docs/screenshots/qa-view.jpg)
+
 The live demo is a public, shared instance, so it caps total usage at
 a small number of questions per day across every visitor combined,
 shown on the page. Running it locally with your own API keys has no
 such cap. See [DEPLOY.md](DEPLOY.md) for how to build and run the
 whole thing in a container instead.
+
+The app also tracks basic product analytics (App Opened, Question
+Submitted, Answer Displayed) to see where visitors drop off, and runs
+a small free guard that filters out greetings and other obviously
+off-topic input before it reaches a paid model call.
+
+![The off-topic guard responding to "hi" instead of spending a real model call](docs/screenshots/off-topic-guard.jpg)
 
 ## Read more
 

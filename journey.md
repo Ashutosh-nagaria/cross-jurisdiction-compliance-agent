@@ -260,3 +260,68 @@ other two systems.
 **Interface design.** The current interface was built for working
 functionality over visual polish, on purpose, and a next pass would put
 real design effort into how it actually looks and feels to use.
+
+## 12. Chapter 14: product analytics and an off-topic guard
+
+The eleven chapters above, and the results write-up in
+[docs/RESULTS.md](docs/RESULTS.md), closed out the actual comparison
+between the three systems. Chapter 14 is smaller and came later, after
+that comparison was already done: it adds real product analytics to
+the Streamlit app, and a small free guard meant to keep obviously
+off-topic questions from spending a real retrieval and model call.
+
+**A real usage funnel.** The app now sends four events to Mixpanel:
+`App Opened`, tracked once per browser session rather than once per
+rerun, since Streamlit reruns the whole script on every interaction;
+`Question Submitted`, tagged with which of the three systems was asked
+and the question text itself; `Answer Displayed`, once a result
+actually renders; and `Answer Rejected`, specific to the one place
+Chain of Custody's human approval step can end without a final answer.
+Read end to end, the first three of those form a real funnel:
+
+```mermaid
+flowchart LR
+    O[App Opened] --> Q[Question Submitted]
+    Q --> D[Answer Displayed]
+```
+
+That is the same shape a real product team would watch to see where
+visitors actually drop off, whether that means never asking a question
+at all after opening the app, or asking one and never sticking around
+to see it answered. Events are routed to Mixpanel's EU endpoint
+(`api-eu.mixpanel.com`) rather than the default US one, a deliberate
+choice given that the whole project is about cross-border data
+transfer rules; routing this project's own visitors' data across a
+border without thinking about it first would have been a little on
+the nose.
+
+This instrumentation exists for learning and interview prep, not
+because this project has real production traffic. Every number that
+came out of testing it came from local development, asking the app
+questions by hand, not from any actual visitor.
+
+**A free off-topic guard, and a real gap in it.** Before a question
+reaches retrieval or generation, `is_likely_off_topic` runs a cheap,
+free check first: strip whitespace and trailing punctuation, lowercase
+it, and reject anything under eight characters or an exact match
+against a short list of known greetings ("hi," "hello," "what is
+this," and similar). Catching those cases before they reach
+`try_use_budget` means a greeting or an empty-ish test input never
+costs a unit of the shared daily budget, let alone a real retrieval
+call or a real model call.
+
+Trying to break it on purpose while testing it surfaced a real gap.
+"what is 5-3" is eleven characters, well past the eight character
+floor, and it does not match any listed greeting, so the guard waved
+it straight through as a legitimate question. It went all the way
+through a real retrieval call and a real model call, spending a unit
+of budget, before the model itself correctly recognized the question
+had nothing to do with data privacy compliance and declined to answer
+it. The guard did exactly what it was built for on greetings and
+near-empty input, and exactly nothing for a short, clearly off-topic
+question made of ordinary words. The honest fix is not a smarter
+guard, just a blunter one, raising the length floor well past eight
+characters, at the cost of also blocking some short but legitimate
+questions along with it. That tradeoff has not been made yet. This is
+recorded here as a known limitation, not something quietly patched
+over before anyone noticed it.
