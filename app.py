@@ -18,6 +18,7 @@ Run this with: streamlit run app.py
 import streamlit as st
 
 from src import system_a, system_c
+from src.rate_limit import DAILY_LIMIT, get_remaining_today, try_use_budget
 from src.system_b import resume_with_decision, start_question
 
 st.set_page_config(page_title="Cross Jurisdiction Compliance Agent", layout="wide")
@@ -55,10 +56,22 @@ No single approach wins at everything. Asking a question below calls
 a real AI model, and for Systems A and B, a real vector search
 database too, so each question asked here has a small real cost.
 Nothing is called just by loading this page.
+
+This is a public demo, so it shares one small daily budget across
+every visitor combined, not a separate allowance for each person.
+Once that budget runs out, the app stops answering new questions
+until it resets the next day.
 """
     )
 
 SYSTEM_NAMES = ["System A", "System B", "System C"]
+
+remaining_today = get_remaining_today()
+st.info(
+    f"Shared daily budget: {remaining_today} of {DAILY_LIMIT} question(s) "
+    "left today, across all visitors. Comparing all three systems at once "
+    "uses three of these in a single click."
+)
 
 
 def render_citations(system_name, result):
@@ -107,7 +120,13 @@ with tab_single:
     ask_clicked = st.button("Ask", key="ask_single")
 
     if ask_clicked and question:
-        if system_choice == "System A":
+        if not try_use_budget(1):
+            st.error(
+                "Today's shared question budget has been used up by visitors "
+                "to this demo. Please come back after it resets, at midnight "
+                "UTC."
+            )
+        elif system_choice == "System A":
             with st.spinner("Asking System A..."):
                 result = system_a.answer_question(question)
             st.session_state["single_result"] = {
@@ -209,7 +228,14 @@ with tab_compare:
     compare_question = st.text_input("Your question", key="compare_question")
     compare_clicked = st.button("Compare all three", key="compare_button")
 
-    if compare_clicked and compare_question:
+    if compare_clicked and compare_question and not try_use_budget(3):
+        st.error(
+            "Comparing all three systems needs 3 units of today's shared "
+            "question budget, and not enough remain. Try \"Ask one system\" "
+            "above instead, or come back after the budget resets at "
+            "midnight UTC."
+        )
+    elif compare_clicked and compare_question:
         col_a, col_b, col_c = st.columns(3)
 
         with col_a:
